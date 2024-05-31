@@ -1,0 +1,62 @@
+@import 'src/theme/shared.scss';
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2.7rem;
+  background-color: $primaryColor;
+  border-radius: $thirdBorderRadius;
+
+  @include xxs {
+    flex-direction: column;
+  }
+}
+
+.imageWrapper {
+  width: 5.8rem;
+  height: 5.8rem;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.name {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: $secondaryColor;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  color: $secondaryColor;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 400;
+  gap: 0.5rem;
+  transition: all 0.5s ease;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-inline-start: auto;
+
+  @include xxs {
+    margin-inline-start: 0;
+  }
+}

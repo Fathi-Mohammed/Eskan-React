@@ -1,0 +1,33 @@
+.ant-rate {
+  margin-bottom: 2rem;
+
+  .ant-rate-star {
+    .ant-rate-star-first,
+    .ant-rate-star-second {
+      color: rgba(
+        $secondaryColor,
+        0.15
+      ) !important; // Grey color for inactive stars
+    }
+  }
+
+  .ant-rate-star-full {
+    .ant-rate-star-second,
+    .ant-rate-star-first {
+      color: #fadb14 !important; // Custom color for full stars
+    }
+  }
+
+  .ant-rate-star-half {
+    .ant-rate-star-first {
+      color: #fadb14 !important; // Custom color for half stars
+    }
+  }
+
+  .ant-rate-star-first,
+  .ant-rate-star-second {
+    font-size: 2.7rem !important; // Custom size for the stars
+    width: 2.7rem !important; // Custom width
+    height: 2.7rem !important; // Custom height
+  }
+}

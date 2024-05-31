@@ -1,0 +1,44 @@
+@import '@/theme/shared.scss';
+
+.socialList {
+  display: flex;
+  align-items: center;
+  // justify-content: space-between;
+  gap: 1.2rem;
+  list-style: none;
+  width: 210px;
+}
+
+.link {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: rgba($secondaryColor , 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s;
+  
+      svg {
+        max-width: 13px;
+        max-height: 13px;
+        path {
+          transition: all 0.5s;
+        }
+      }
+
+  &:hover {
+    background-color: $secondaryColor;
+
+    svg {
+      path {
+        fill: $primaryColor;
+      }
+    }
+  }
+}
+
+.icon {
+  color: #fff;
+  font-size: 1.6rem;
+}

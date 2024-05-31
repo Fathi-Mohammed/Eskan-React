@@ -1,0 +1,78 @@
+@import '@/theme/shared.scss';
+
+.realEstateCard {
+  width: 100%;
+  border-radius: $mainBorderRadius;
+  transition: all 0.3s ease-in-out;
+  background-color: rgba(#fff, 0.2);
+  padding: 3.3rem 1rem;
+  margin-top: 6rem;
+
+  &:hover {
+    background-color: rgba(#fff, 0.3);
+
+    .title {
+      color: $primaryColor;
+    }
+
+    img {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.imgWrapper {
+  display: flex;
+  border-radius: $mainBorderRadius;
+  overflow: hidden;
+  margin-top: -9.3rem;
+  margin-bottom: 2.4rem;
+  position: relative;
+}
+
+.status {
+  position: absolute;
+  top: 2rem;
+  inset-inline-start: 2rem;
+  padding: 0.8rem 1.2rem;
+  border-radius: $mainBorderRadius;
+  background-color: $greenColor;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.title {
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1.6rem;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.6rem;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #fff;
+
+  svg {
+    flex-shrink: 0;
+  }
+}
+
+.price {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: $primaryColor;
+}

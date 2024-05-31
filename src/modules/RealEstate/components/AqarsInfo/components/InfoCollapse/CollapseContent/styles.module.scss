@@ -1,0 +1,46 @@
+@import '@/theme/shared.scss';
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.info {
+  font-size: 1.4rem;
+  color: #fff;
+  font-weight: 300;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 1rem;
+}
+
+.infoKey {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  &::before {
+    content: '';
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    margin-right: 1rem;
+    background-color: transparent;
+    border: 1px solid $primaryColor;
+    border-radius: 50%;
+  }
+}
+
+.infoValue {
+  font-size: 1.6rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+}
+
+.empty {
+  h4 {
+    margin-top: 2rem;
+  }
+}

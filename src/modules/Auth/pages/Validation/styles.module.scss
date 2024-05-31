@@ -1,0 +1,59 @@
+@import '@/theme/shared.scss';
+
+.codeInputsWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.codeInput {
+  width: 73px;
+  height: 63px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: $secondaryColor;
+  border-radius: 10px;
+  border: 1px solid $secondaryColor;
+  transition: 0.5s;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+}
+
+.active {
+  color: #fff;
+  background-color: $secondaryColor;
+}
+
+.resendCodeWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 5rem;
+  font-size: 1.6rem;
+  color: $headingMainColor;
+  font-weight: 400;
+}
+
+.resendCode {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: $headingMainColor;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

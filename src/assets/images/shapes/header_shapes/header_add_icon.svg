@@ -1,0 +1,11 @@
+<svg id="add-circle" xmlns="http://www.w3.org/2000/svg" width="21.366" height="21.366" viewBox="0 0 21.366 21.366">
+  <path id="Vector" d="M0,7.122V0" transform="translate(10.683 7.122)" fill="none" stroke="#efc47f" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+  <path id="Vector-2" data-name="Vector" d="M0,0H.9" transform="translate(13.345 10.683)" fill="none" stroke="#efc47f" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+  <path id="Vector-3" data-name="Vector" d="M0,0H3.392" transform="translate(7.122 10.683)" fill="none" stroke="#efc47f" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+  <path id="Vector-4" data-name="Vector" d="M0,7.122V0" transform="translate(10.683 7.122)" fill="none" stroke="#efc47f" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+  <path id="Vector-5" data-name="Vector" d="M1.78,3.561A8.9,8.9,0,1,0,8.9,0,8.782,8.782,0,0,0,5.315.757" transform="translate(1.78 1.78)" fill="none" stroke="#efc47f" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+  <g id="Vector-6" data-name="Vector" fill="none" opacity="0">
+    <path d="M0,0H21.366V21.366H0Z" stroke="none"/>
+    <path d="M 1 1 L 1 20.36569976806641 L 20.36569976806641 20.36569976806641 L 20.36569976806641 1 L 1 1 M 0 0 L 21.36569976806641 0 L 21.36569976806641 21.36569976806641 L 0 21.36569976806641 L 0 0 Z" stroke="none" fill="#efc47f"/>
+  </g>
+</svg>

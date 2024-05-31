@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="24" height="24" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Repeat_Grid_5" data-name="Repeat Grid 5" clip-path="url(#clip-path)">
+    <g transform="translate(-875 -643)">
+      <g id="arrow-left_linear" data-name="arrow-left/linear" transform="translate(875 643)">
+        <g id="vuesax_linear_arrow-left" data-name="vuesax/linear/arrow-left">
+          <g id="arrow-left">
+            <path id="Vector" d="M7.1,15.84.577,9.32a1.986,1.986,0,0,1,0-2.8L7.1,0" transform="translate(7.902 4.08)" fill="none" stroke="#efc47f" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+            <path id="Vector-2" data-name="Vector" d="M0,0H24V24H0Z" transform="translate(24 24) rotate(180)" fill="none" opacity="0"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

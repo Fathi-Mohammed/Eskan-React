@@ -1,0 +1,92 @@
+@import '@/theme/shared.scss';
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+  @include sm {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 80%;
+    inset-inline-start: -100%;
+    background-color: $primaryColor;
+    flex-direction: column;
+    justify-content: unset;
+    z-index: 999;
+    padding: 2rem;
+    padding-top: 13rem;
+    transition: 0.5s;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+  }
+}
+
+.open {
+  @include sm {
+    inset-inline-start: 0;
+  }
+}
+
+.logo {
+  display: none;
+
+  @include sm {
+    display: block;
+    margin-bottom: 8rem;
+    min-width: 150px;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.closeButton {
+  display: none;
+
+  @include sm {
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 0;
+    top: 20px;
+    left: 30px;
+  
+    &:hover,
+    &:focus {
+      outline: none;
+    }
+  
+    @include dir {
+      right: 30px;
+      left: unset;
+    }
+  
+    &::after,
+    &::before {
+      content: "";
+      display: block;
+      width: 2px;
+      height: 25px;
+      position: absolute;
+      background-color: $secondaryColor;
+      top: 4px;
+      right: 10px;
+      transform: rotate(-45deg);
+      transition: 0.2s;
+    }
+  
+    &::before {
+      transform: rotate(45deg);
+    }
+  
+  }
+}

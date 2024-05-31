@@ -1,0 +1,9 @@
+@import '@/theme/shared.scss';
+
+.map {
+  width: 100%;
+  height: 150px;
+  border-radius: $thirdBorderRadius;
+  overflow: hidden;
+  margin-bottom: 2.5rem;
+}

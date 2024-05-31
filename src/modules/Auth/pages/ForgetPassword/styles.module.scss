@@ -1,0 +1,12 @@
+@import '@/theme/shared.scss';
+
+.link {
+  color: $headingMainColor !important;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.wrapper {
+  max-width: 388px;
+  margin: 0 auto;
+}

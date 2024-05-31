@@ -1,0 +1,506 @@
+.button__ {
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+  outline: none;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  justify-content: center;
+  text-decoration: none;
+  gap: 10px;
+  height: 48px;
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 400;
+  transition: 0.5s;
+
+  .icon__ {
+    flex-shrink: 0;
+    transition: 0.5s;
+  }
+
+  // &:focus {
+  // border: none;
+  // outline: none;
+  // }
+
+  &:hover {
+    text-decoration: none;
+    color: $headingMainColor;
+  }
+
+  &:disabled {
+    cursor: not-allowed !important;
+  }
+
+  &.default_cursor {
+    cursor: default;
+  }
+
+  // ===================================================================
+  // Center
+  // ===================================================================
+
+  &.center {
+    margin: 0 auto;
+  }
+
+  &.center_md {
+    @include md {
+      margin: 0 auto;
+    }
+  }
+
+  &.center_sm {
+    @include sm {
+      margin: 0 auto;
+    }
+  }
+
+  &.center_xs {
+    @include xs {
+      margin: 0 auto;
+    }
+  }
+
+  &.center_xxs {
+    @include xxs {
+      margin: 0 auto;
+    }
+  }
+
+  // ===================================================================
+  // Size
+  // ===================================================================
+
+  &.full_width {
+    width: 100%;
+    min-width: 100%;
+  }
+
+  &.full_width_md {
+    @include md {
+      width: 100%;
+      min-width: 100%;
+    }
+  }
+
+  &.full_width_sm {
+    @include sm {
+      width: 100% !important;
+      min-width: 100% !important;
+    }
+  }
+
+  &.full_width_xs {
+    @include xs {
+      width: 100%;
+      min-width: 100%;
+    }
+  }
+
+  &.full_width_xxs {
+    @include xxs {
+      width: 100%;
+      min-width: 100%;
+    }
+  }
+
+  &.half_width {
+    width: 50%;
+  }
+
+  &.half_width_md {
+    @include md {
+      width: 50%;
+    }
+  }
+
+  &.half_width_sm {
+    @include sm {
+      width: 50%;
+    }
+  }
+
+  &.half_width_xs {
+    @include xs {
+      width: 50%;
+    }
+  }
+
+  &.half_width_xxs {
+    @include xxs {
+      width: 50%;
+    }
+  }
+
+  // ===================================================================
+  // Fixed Width
+  // ===================================================================
+  // ===================================================================
+
+  &.fixed_size__ {
+    min-width: 183px;
+    max-width: 183px;
+  }
+
+  // ===================================================================
+  // Margin
+  // ===================================================================
+  &.margin_start_auto__ {
+    margin-inline-start: auto;
+  }
+
+  // ===================================================================
+  // Icon
+  // ===================================================================
+  &.scale_icon_on_hover {
+    &:hover {
+      .icon__ {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &.icon_dir {
+    .icon__,
+    svg {
+      @include dir {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  // ===================================================================
+  // Colors
+  // ===================================================================
+
+  &.primary__ {
+    background-color: $primaryColor;
+    border-color: $primaryColor;
+
+    &.outline__ {
+      color: $primaryColor;
+
+      &:hover {
+        background-color: rgba($primaryColor, 0.1) !important;
+      }
+    }
+
+    &:hover {
+      background-color: rgba($primaryColor, 0.9);
+    }
+  }
+
+  &.secondary__ {
+    background-color: $secondaryColor;
+    border-color: $secondaryColor;
+
+    &.outline__ {
+      color: $secondaryColor;
+
+      &:hover {
+        background-color: rgba($secondaryColor, 0.1) !important;
+      }
+    }
+
+    &:hover {
+      background-color: rgba($secondaryColor, 0.9);
+    }
+  }
+
+  &.red__ {
+    background-color: $redColor;
+    border-color: $redColor;
+
+    &.outline__ {
+      color: $redColor;
+
+      &:hover {
+        background-color: rgba($redColor, 0.1) !important;
+      }
+    }
+
+    &:hover {
+      background-color: rgba($redColor, 0.9);
+    }
+  }
+
+  &.green__ {
+    background-color: $greenColor;
+    border-color: $greenColor;
+
+    &.outline__ {
+      color: $greenColor;
+
+      &:hover {
+        background-color: rgba($greenColor, 0.1) !important;
+      }
+    }
+
+    &:hover {
+      background-color: rgba($greenColor, 0.9);
+    }
+  }
+
+  &.grey__ {
+    background-color: $greyColor;
+    border-color: $greyColor;
+
+    &.outline__ {
+      color: $greyColor;
+
+      &:hover {
+        background-color: rgba($greyColor, 0.1) !important;
+      }
+    }
+
+    &:hover {
+      background-color: rgba($greyColor, 0.9);
+    }
+  }
+
+  &.orange__ {
+    background-color: $orangeColor;
+    border-color: $orangeColor;
+
+    &.outline__ {
+      color: $orangeColor;
+
+      &:hover {
+        background-color: rgba($orangeColor, 0.1) !important;
+      }
+    }
+
+    &:hover {
+      background-color: rgba($orangeColor, 0.9);
+    }
+  }
+
+  &.yellow__ {
+    background-color: $yellowColor;
+    border-color: $yellowColor;
+
+    &.outline__ {
+      color: $yellowColor;
+
+      &:hover {
+        background-color: rgba($yellowColor, 0.1) !important;
+      }
+    }
+
+    &:hover {
+      background-color: rgba($yellowColor, 0.9);
+    }
+  }
+
+  // ===================================================================
+  // Outline
+  // ===================================================================
+  &.outline__ {
+    background-color: transparent !important;
+  }
+
+  // ===================================================================
+  // Border Radius
+  // ===================================================================
+  &.main_rounded__ {
+    border-radius: $mainBorderRadius;
+  }
+
+  &.secondary_rounded__ {
+    border-radius: $secondaryBorderRadius;
+  }
+
+  &.third_rounded__ {
+    border-radius: $thirdBorderRadius;
+  }
+
+  &.full_rounded__ {
+    border-radius: 50%;
+  }
+
+  // ===================================================================
+  // Other
+  // ===================================================================
+  &.circle__ {
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+
+    @include sm {
+      height: 35px !important;
+    }
+  }
+
+  &.second_color_button__ {
+    width: 168px;
+    height: 46px;
+    background-color: $secondaryColor;
+    color: #fff;
+    font-weight: 400;
+    border-radius: $secondaryBorderRadius;
+    border: 1px solid $secondaryColor;
+
+    &:hover {
+      background-color: rgba($secondaryColor, 0.9);
+    }
+
+    &.bordered__ {
+      background-color: transparent;
+      color: $secondaryColor;
+
+      &:hover {
+        background-color: rgba($secondaryColor, 0.1);
+      }
+    }
+  }
+
+  &.header_add_button__ {
+    color: $primaryColor;
+  }
+
+  &.add_to_fav__ {
+    width: 26px;
+    svg {
+      path {
+        transition: all 0.5s;
+      }
+    }
+
+    &.active {
+      svg {
+        path {
+          fill: $redColor !important;
+          stroke: $redColor !important;
+        }
+      }
+    }
+
+    &:hover {
+      svg {
+        path {
+          fill: rgba(#fff, 0.2);
+        }
+      }
+    }
+  }
+
+  &.comment_button__ {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(#fff, 0.13);
+    border-radius: 50%;
+    flex-shrink: 0;
+
+    .icon__ {
+      @include dir {
+        transform: rotate(180deg);
+      }
+    }
+
+    &:hover {
+      background-color: rgba(#fff, 0.3);
+    }
+  }
+
+  &.add_rating_button__ {
+    background-color: rgba(#fff, 0.13);
+    padding: 2rem 3.5rem;
+    border-radius: $mainBorderRadius;
+    height: 52px;
+    font-size: 1.4rem;
+
+    .arrow_icon__ {
+      margin-inline-start: auto;
+      filter: brightness(0) invert(1);
+    }
+
+    &:hover {
+      background-color: rgba(#fff, 0.3);
+    }
+  }
+
+  &.submit_rate__btn {
+    &:disabled {
+      cursor: not-allowed !important;
+    }
+  }
+
+  &.chat_delete__ {
+    background-color: #462735;
+    border: 2px solid transparent;
+    border-radius: $mainBorderRadius;
+    padding: 1.2rem 5.2rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+
+    @include xs {
+      padding: 1.2rem 2.2rem;
+
+      .text__ {
+        display: none;
+      }
+    }
+
+    &:hover {
+      background-color: rgba(#462735, 0.8);
+    }
+  }
+
+  &.toggle_chat_contacts {
+    font-size: 1.3rem;
+    font-weight: 500;
+    border: 1px solid #fff;
+    border-radius: $mainBorderRadius;
+    padding: 1rem 2rem;
+  }
+
+  &.close_chat_contacts,
+  &.toggle_chat_contacts {
+    display: none;
+
+    @include sm {
+      display: block;
+    }
+  }
+
+  &.upgrade_card_button {
+    background-color: #fff;
+    height: 58px;
+    border-radius: $mainBorderRadius;
+    font-size: 1.4rem;
+    font-weight: 700;
+    padding: 0 3rem;
+    color: $primaryColor;
+
+    &:hover {
+      background-color: rgba(#fff, 0.9);
+    }
+  }
+
+  &.edit_button__ {
+    color: $secondaryColor;
+    background-color: $primaryColor;
+    width: 100%;
+    font-size: 1.4rem;
+    font-weight: 400;
+    border-radius: $mainBorderRadius;
+
+    &:hover {
+      background-color: rgba($primaryColor, 0.9);
+    }
+  }
+
+  &.delete_button__ {
+    background-color: rgba($redColor, 0.17);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    flex-shrink: 0;
+
+    &:hover {
+      background-color: rgba($redColor, 0.3);
+    }
+  }
+}

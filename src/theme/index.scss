@@ -1,0 +1,28 @@
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+
+@import './abstracts/variables.scss';
+@import './abstracts/mixins.scss';
+@import './abstracts/functions.scss';
+
+@import './base/base.scss';
+@import './base/fonts.scss';
+@import './base/buttons';
+@import './base/links.scss';
+@import './base/default_page.scss';
+@import './base/scroll_bar';
+
+@import './componants/main_pages_heading';
+@import './componants/main_section_heading';
+
+@import './library/swiper.scss';
+@import './library/ant_collapse';
+@import './library/ant_rate';
+@import './library/ant_steps';
+@import './library/ant_upload';
+
+@import './forms/forms.scss';
+@import './forms/ant_otp.scss';
+@import './forms/input.scss';
+@import './forms/textarea';
+@import './forms/select';
+@import './forms/pagination';

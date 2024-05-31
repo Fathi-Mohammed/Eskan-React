@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" viewBox="0 0 90 90">
+  <g id="Group_174455" data-name="Group 174455" transform="translate(-318 -782)">
+    <g id="tick-circle_bulk" data-name="tick-circle/bulk" transform="translate(318 782)">
+      <g id="vuesax_bulk_tick-circle" data-name="vuesax/bulk/tick-circle">
+        <g id="tick-circle">
+          <path id="Vector" d="M75,37.5A37.5,37.5,0,1,1,37.5,0,37.5,37.5,0,0,1,75,37.5Z" transform="translate(7.5 7.5)" fill="#f7003a" opacity="0.09"/>
+          <path id="Vector-2" data-name="Vector" d="M0,0H90V90H0Z" fill="none" opacity="0"/>
+        </g>
+      </g>
+    </g>
+    <g id="trash_bold" data-name="trash/bold" transform="translate(347.973 811.852)">
+      <g id="vuesax_bold_trash" data-name="vuesax/bold/trash">
+        <g id="trash">
+          <path id="Vector-3" data-name="Vector" d="M23.572,4.984c-2.016-.2-4.032-.351-6.061-.463V4.508L17.236,2.88C17.048,1.728,16.772,0,13.842,0H10.561C7.643,0,7.368,1.653,7.168,2.868L6.9,4.471c-1.165.075-2.329.15-3.494.263l-2.555.25A.937.937,0,1,0,1.031,6.85L3.586,6.6A99.842,99.842,0,0,1,23.4,6.862h.1a.948.948,0,0,0,.939-.852A.96.96,0,0,0,23.572,4.984Z" transform="translate(2.813 1.565)" fill="#f7003a"/>
+          <path id="Vector-4" data-name="Vector" d="M18.536.488A1.583,1.583,0,0,0,17.4,0H1.568A1.562,1.562,0,0,0,.428.488,1.613,1.613,0,0,0,0,1.666L.779,14.514c.138,1.9.313,4.283,4.684,4.283H13.5c4.37,0,4.546-2.367,4.684-4.283l.776-12.836A1.624,1.624,0,0,0,18.536.488ZM11.561,12.523H7.391a.939.939,0,0,1,0-1.878h4.17a.939.939,0,0,1,0,1.878Zm1.052-5.009H6.352a.939.939,0,0,1,0-1.878h6.261a.939.939,0,1,1,0,1.878Z" transform="translate(5.545 9.705)" fill="#f7003a"/>
+          <path id="Vector-5" data-name="Vector" d="M0,0H30.055V30.055H0Z" transform="translate(30.055 30.055) rotate(180)" fill="none" opacity="0"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

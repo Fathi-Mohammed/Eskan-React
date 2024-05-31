@@ -1,0 +1,13 @@
+@import '@/theme/shared.scss';
+
+.realEstates {
+  position: relative;
+
+  &::after {
+    content: url(@/assets/images/product_sec_background.png);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    inset-inline-end: 0;
+  }
+}

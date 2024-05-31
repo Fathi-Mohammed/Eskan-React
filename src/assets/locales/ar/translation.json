@@ -1,0 +1,56 @@
+{
+  "Eskan": "اسكان",
+  "NotFound": "الصفحة غير موجودة",
+  "Home": "الرئيسية",
+  "search": "البحث",
+  "BrowseRealEstate": "تصفح العقارات",
+  "RAS": "ر.س",
+  "noInfo": "لا يوجد معلومات",
+  "pages": {
+    "home": "الرئيسية",
+    "ads": "الإعلانات"
+  },
+  "header": {
+    "ads": "الإعلانات",
+    "addAd": "إضافة إعلان"
+  },
+  "footer": {
+    "quickLinks": "روابط سريعة",
+    "contacts": "اتصل بنا",
+    "followUs": "تابعنا عبر الوسائل التالية"
+  },
+  "auth": {
+    "phoneNumber": "رقم الجوال",
+    "password": "كلمة المرور",
+    "loginTitle": "تسجيل الدخول",
+    "loginSubtitle": "أدخل بياناتك لتسجيل الدخول إلى حسابك"
+  },
+  "realEstate": {
+    "createdAt": "تم النشر في : "
+  },
+  "aqarInfo": {
+    "bathrooms": "عدد دورات المياه",
+    "hasGuard": "هل يوجد حديقة ؟",
+    "hasElevator": "هل يوجد مصعد ؟",
+    "isNew": "حالة العقار",
+    "streetSize": "عرض الشارع",
+    "hasKitchen": "هل يوجد مطبخ ؟",
+    "halls": "عدد القاعات",
+    "hasCooler": "هل يوجد مكيفات ؟",
+    "description": "الوصف",
+    "age": "عمر العقار",
+    "sleepRooms": "عدد غرف النوم",
+    "front": "الواجهة",
+    "size": "المساحة",
+    "level": "عدد الأدوار",
+    "yes": "نعم",
+    "no": "لا",
+    "new": "جديد",
+    "old": "قديم",
+    "info": "معلومات العقار",
+    "meterPrice": "السعر بالمتر",
+    "typeTxt": "الفئة ",
+    "years": "سنة",
+    "meters": "م"
+  }
+}

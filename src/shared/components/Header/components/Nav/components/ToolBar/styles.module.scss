@@ -1,0 +1,111 @@
+@import '@/theme/shared.scss';
+
+.toolBar {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+
+  @include sm {
+    order: 1;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+}
+
+.listItem {
+  @include sm {
+    width: 100%;
+    
+    &.langButtonItem {
+      position: absolute;
+      top: 20px;
+      inset-inline-start: 20px;
+    }
+
+    &.profileButtonItem {
+      position: absolute;
+      top: 20px;
+      inset-inline-start: 65px;
+      z-index: 10;
+      width: fit-content;
+
+      a {
+        width: 35px !important;
+      }
+    }
+  }
+}
+
+.headerLinksWrapper {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+
+  @include sm {
+    width: 100%;
+    gap: 0;
+  }
+}
+
+.headerLinks {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 131px;
+  border: 1px solid $primaryColor;
+  border-radius: $mainBorderRadius;
+  text-decoration: none;
+  font-size: 1.4rem;
+  font-weight: 700;
+  height: 48px;
+  transition: 0.5s;
+
+  @include sm {
+    width: 50%;
+    border-radius: 0;
+    border-color: rgba(#fff ,0.2);
+    color: #fff !important;
+    font-size: 1.6rem;
+  }
+}
+
+.searchWrapper {
+  display: flex;
+  align-items: center;
+  border: 1px solid $secondaryColor;
+  border-radius: $secondaryBorderRadius;
+  height: 48px;
+  padding: 0 2rem;
+
+  input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    padding: 0 1.5rem;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: $secondaryColor;
+    background-color: transparent;
+
+    &::placeholder {
+      opacity: 1;
+      transition: 0.5s;
+    }
+
+    &:focus {
+      &::placeholder {
+        opacity: 0;
+      }
+    }
+  }
+}
+
+.langButton {
+  font-size: 1.7rem;
+  transition: all 0.5s;
+}

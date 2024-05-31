@@ -1,0 +1,27 @@
+@import '@/theme/shared.scss';
+
+.registrationPage {
+  padding: 15rem 0;
+  position: relative;
+
+  &::after ,
+  &::before {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 255px;
+    z-index: -1;
+    background-color: rgba($primaryColor , 0.2);
+    border-radius: $mainBorderRadius;
+  }
+
+  &::after {
+    bottom: 50px;
+    inset-inline-start: 0;
+  }
+
+  &::before {
+    top: 100px;
+    inset-inline-end: 0;
+  }
+}

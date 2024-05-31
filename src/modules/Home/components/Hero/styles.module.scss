@@ -1,0 +1,88 @@
+@import '@/theme/shared.scss';
+
+.hero {
+  padding: 6.8rem 0;
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 656px;
+    height: 255px;
+    transform: rotate(41deg);
+    inset-inline-start: -250px;
+    bottom: 0;
+    border-radius: 55px;
+    background-color: rgba($primaryColor , 0.1);
+  }
+}
+
+.title {
+  font-size: 4.7rem;
+  font-weight: 700;
+  color: #fff;
+  max-width: 337px;
+  line-height: 1.7;
+  margin-bottom: 3rem;
+
+  @include sm {
+    font-size: 3.2rem;
+    text-align: center;
+    max-width: 100%;
+  }
+}
+
+.subtitle {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #fff;
+  max-width: 337px;
+  line-height: 2.2;
+  opacity: 0.63;
+  margin-bottom: 5rem;
+
+  @include sm {
+    font-size: 1.4rem;
+    text-align: center;
+    max-width: 100%;
+  }
+}
+
+.imageWrapper {
+  position: relative;
+  padding: 30px 0;
+
+  figure {
+    border-radius: $mainBorderRadius;
+    overflow: hidden;
+
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba($primaryColor, 0.25);
+    }
+  
+  }
+  
+  &::after,
+  &::before {
+    content: url('@/assets/images/shapes/hero_img_shape.svg');
+    position: absolute;
+    z-index: -1;
+  }
+  
+  &::after {
+    inset-inline-end: -50px;
+    top: 0;
+  }
+  
+  &::before {
+    inset-inline-start: -100px;
+    bottom: 0;
+  }
+}

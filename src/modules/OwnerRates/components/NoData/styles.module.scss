@@ -1,0 +1,32 @@
+@import '@/theme/shared.scss';
+
+.noData {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  height: 100%;
+  color: $paragraphSecondaryColor;
+  font-size: 1.6rem;
+  font-weight: 400;
+  min-height: 50vh;
+
+  svg {
+    width: 20rem;
+    height: 20rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.title {
+  font-size: 2.4rem;
+  font-weight: 600;
+}
+
+.description {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: $paragraphSecondaryColor;
+}

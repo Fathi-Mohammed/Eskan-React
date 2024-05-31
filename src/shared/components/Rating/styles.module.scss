@@ -1,0 +1,27 @@
+@import '@/theme/shared.scss';
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.rateIcons {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.rateNum {
+  font-size: 1.4rem;
+  color: $secondaryColor;
+  font-weight: 600;
+}
+
+.yellow {
+  color: $yellowColor;
+
+  path {
+    fill: $yellowColor;
+  }
+}

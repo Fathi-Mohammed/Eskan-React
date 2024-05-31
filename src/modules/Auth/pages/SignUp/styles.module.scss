@@ -1,0 +1,21 @@
+@import '@/theme/shared.scss';
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.link {
+  color: $headingMainColor !important;
+  font-weight: 700;
+}
+
+.logo {
+  margin-bottom: 20px;
+}
+
+.inputWrapper {
+  position: relative;
+  cursor: pointer;
+}

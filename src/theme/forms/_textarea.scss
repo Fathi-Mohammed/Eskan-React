@@ -1,0 +1,10 @@
+.textarea {
+  height: 186px;
+  resize: none;
+  width: 100%;
+  border-radius: 10px;
+
+  &:focus {
+    outline: 0;
+  }
+}

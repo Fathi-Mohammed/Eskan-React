@@ -1,0 +1,46 @@
+@import '@/theme/shared.scss';
+
+.contactUsSection {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    content: url('@/assets/images/shapes/contactUsBackgrond.png');
+    top: 50%;
+    inset-inline-start: -75px;
+    transform: translateY(-50%);
+    z-index: -1;
+
+    @include sm {
+      opacity: 0.25;
+    }
+
+    @include dir {
+      transform: scaleX(-1) translateY(-50%);
+    }
+  }
+
+}
+
+.inputWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  
+  @include xs {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+textarea,
+button,
+input {
+  position: relative;
+  z-index: 1;
+}
+
+textarea,
+button {
+  grid-column: span 2;
+}

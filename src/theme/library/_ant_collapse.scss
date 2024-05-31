@@ -1,0 +1,34 @@
+.ant-collapse {
+  border-radius: $thirdBorderRadius;
+  border: 0;
+
+  .ant-collapse-header {
+    border-radius: $thirdBorderRadius !important;
+    overflow: hidden;
+    border: 1px solid rgba($primaryColor, 0.1);
+    transition: all 0.5s;
+    color: #fff !important;
+    font-size: 1.4rem;
+    font-weight: 700;
+  }
+
+  .ant-collapse-header-text {
+    order: 1 !important;
+  }
+
+  .ant-collapse-expand-icon {
+    order: 2 !important;
+    transform: scaleX(-1);
+  }
+
+  .ant-collapse-content {
+    background-color: transparent !important;
+    border: 1px solid rgba($primaryColor, 0.1);
+  }
+
+  .ant-collapse-item-active {
+    .ant-collapse-header {
+      border-radius: $thirdBorderRadius $thirdBorderRadius 0 0 !important;
+    }
+  }
+}

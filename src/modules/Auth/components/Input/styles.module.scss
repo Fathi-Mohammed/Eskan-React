@@ -1,0 +1,22 @@
+.inputWrapper {
+  position: relative;
+
+  input {
+    padding-inline-start: 7rem;
+  }
+
+  > svg {
+    position: absolute;
+    top: 50%;
+    inset-inline-start: 35px;
+    transform: translateY(-50%);
+  }
+}
+
+.error {
+  display: none;
+}
+
+.input:invalid[focused='true'] + .error {
+  display: block;
+}

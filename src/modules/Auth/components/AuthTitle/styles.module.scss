@@ -1,0 +1,27 @@
+@import '@/theme/shared.scss';
+
+.authTitleWrapper {
+  margin-bottom: 3rem;
+  margin-top: 4.3rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: $primaryColor;
+  margin-bottom: 1.8rem;
+}
+
+.subtitle {
+  color: $paragraphMainColor;
+  font-size: 1.4rem;
+  font-weight: 300;
+  margin: 0;
+}
+
+.center {
+  .title,
+  .subtitle {
+    text-align: center;
+  }
+}

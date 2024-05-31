@@ -1,0 +1,23 @@
+@import '@/theme/shared.scss';
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.imageWrapper {
+  width: 5.8rem;
+  height: 5.8rem;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.name {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #fff;
+  display: block;
+  margin-bottom: 0.5rem;
+}

@@ -1,0 +1,76 @@
+@import '@/theme/shared.scss';
+
+.titleWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.titleContent {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: 85%;
+}
+
+.title {
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+  margin: 0;
+}
+
+.status {
+  padding: 0.8rem 1.2rem;
+  border-radius: $mainBorderRadius;
+  background-color: $greenColor;
+  font-size: 1.2rem;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #fff;
+}
+
+.infoWrapper {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  margin-bottom: 2.2rem;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: $paragraphMainColor;
+  font-size: 1.4rem;
+  font-weight: 300;
+  cursor: default;
+}
+
+.price {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: $primaryColor;
+  display: block;
+  margin-bottom: 2rem;
+
+  @include xs {
+    font-size: 1.6rem;
+  }
+}
+
+.parag {
+  color: $paragraphMainColor;
+  font-size: 1.4rem;
+  line-height: 2.1;
+  font-weight: 300;
+  margin-bottom: 2rem;
+  max-width: 100%;
+  overflow-wrap: break-word;
+}
