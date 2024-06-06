@@ -1,33 +1,37 @@
-import { useState, useContext, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
-import { Link, useNavigate } from 'react-router-dom';
-import { AuthTitle, Input } from '../../components';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { AuthTitle } from '../../components';
 import { useTranslation } from 'react-i18next';
 import { tabTitle } from '@/shared/utils/tabTitle';
 import { LOGIN } from '@/shared/services/api/Api';
-import AuthContext from '@/shared/context/AuthProvider';
+import { useAuth } from '@/shared/context/AuthProvider';
 
 import Logo from '@/assets/images/register/logo.svg?react';
 import styles from './styles.module.scss';
-import { notification } from 'antd';
-// import Axios from '@/shared/services/Axios';
+import { notification, Form, Input } from 'antd';
 import useMutationData from '@/shared/hooks/useMutationData';
 
 type NotificationType = 'success' | 'info' | 'warning' | 'error';
 
+type FieldType = {
+  mobile: string;
+  password: string;
+};
+
 export const SignIn = () => {
-  const [formData, setFormData] = useState({
-    mobile: '',
-    password: '',
-  });
+  const [formData, setFormData] = useState<FieldType>();
+
   const [api, contextHolder] = notification.useNotification();
 
-  const context = useContext(AuthContext);
-  if (!context) throw new Error('AuthProvider not found');
+  const context = useAuth();
 
   const { login } = context;
 
   const navigate = useNavigate();
+
+  const location = useLocation();
+  const from = location?.state?.from || '/';
 
   const { t } = useTranslation();
   tabTitle(t('auth.loginTitle'));
@@ -43,40 +47,38 @@ export const SignIn = () => {
     });
   };
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
   const {
     mutateAsync: tryLogin,
+    isLoading: isTryingLogin,
     isSuccess,
-    isLoading: isTryingToLogin,
     data,
+    error,
   } = useMutationData(LOGIN, formData);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    if (isTryingToLogin) return;
-
-    await tryLogin();
-    if (data.status == 'success') {
-      login(data.data);
+  const handleSubmit = async (value: FieldType) => {
+    setFormData(value);
+    if (isTryingLogin) return;
+    try {
+      await tryLogin();
+    } catch (error) {
+      throw new Error(`${error}`);
     }
   };
 
   useEffect(() => {
     if (isSuccess) {
+      console.log(data);
       if (data.status === 'success') {
-        openNotificationWithIcon('success', 'Success', 'Login Success');
-        setTimeout(() => {
-          navigate('/');
-        }, 1000);
+        openNotificationWithIcon('success', 'Login Success', data.message);
+        login(data.data);
+        setTimeout(() => navigate(from), 1000);
       } else {
-        openNotificationWithIcon('error', 'Error', data?.message);
+        openNotificationWithIcon('error', 'Login Failed', data.message);
       }
+    } else if (error) {
+      openNotificationWithIcon('error', 'Login Failed', error.message);
     }
-  }, [isSuccess]);
+  }, [isSuccess, error]);
 
   return (
     <div>
@@ -91,39 +93,47 @@ export const SignIn = () => {
             />
           </Col>
           <Col xs={12} lg={6}>
-            <form onSubmit={handleSubmit} className={styles.form}>
-              <Input
-                icon="phone"
+            <Form onFinish={handleSubmit} className={styles.form}>
+              <Form.Item<FieldType>
                 name="mobile"
-                className="input"
-                type="text"
-                onChange={handleChange}
-                placeholder={t('auth.phoneNumber')}
-              />
-              <Input
-                icon="password"
+                rules={[
+                  {
+                    required: true,
+                    message: 'Please input your mobile number!',
+                  },
+                ]}
+              >
+                <Input className="input" placeholder="Mobile" />
+              </Form.Item>
+              <Form.Item<FieldType>
                 name="password"
-                className="input"
-                type="password"
-                onChange={handleChange}
-                placeholder={t('auth.password')}
-              />
+                rules={[
+                  { required: true, message: 'Please input your password!' },
+                ]}
+              >
+                <Input
+                  className="input"
+                  type="password"
+                  placeholder="Password"
+                />
+              </Form.Item>
               <Link to="/auth/forget-password" className={styles.forgetLink}>
                 {t('forgetPassword')}
               </Link>
               <button
                 type="submit"
-                className={`link__ primary__ full_width main_rounded__ mb-4 ${styles.link}`}
+                className={`link primary__ full_width main_rounded__ mb-4 ${styles.link}`}
+                disabled={isTryingLogin}
               >
                 {t('login')}
               </button>
               <Link
                 to="/auth/sign-up"
-                className={`link__ primary__ full_width main_rounded__ outline__ ${styles.link}`}
+                className={`link primary__ full_width main_rounded__ outline__ ${styles.link}`}
               >
                 {t('signUp')}
               </Link>
-            </form>
+            </Form>
           </Col>
         </Row>
       </Container>

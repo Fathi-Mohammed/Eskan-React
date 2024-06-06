@@ -33,6 +33,7 @@ export const AqarsInfo: React.FC<props> = ({ data, handleFav }) => {
     files,
     info,
     user,
+    show_phone,
   } = data || {};
 
   return (
@@ -72,7 +73,7 @@ export const AqarsInfo: React.FC<props> = ({ data, handleFav }) => {
         <p className={styles.parag}>{description}</p>
         <Map data={location} />
         <InfoCollapse data={info} />
-        <UserInfo data={user} />
+        <UserInfo data={user} showPhone={show_phone} />
       </Col>
     </Row>
   );

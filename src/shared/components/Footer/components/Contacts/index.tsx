@@ -12,7 +12,7 @@ export const Contacts: React.FC<props> = ({ data }) => {
     <div className={styles.contacts}>
       <Link
         to={`callto:${data}`}
-        className="link__ footer_contacts"
+        className="link footer_contacts"
         target={'_blank'}
       >
         <CallIcon />

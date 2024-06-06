@@ -1,14 +1,50 @@
-import React, { useState } from 'react';
-import { Button, message, Steps } from 'antd';
+import React, { useEffect, useState } from 'react';
+import { Steps } from 'antd';
 import { Container } from 'react-bootstrap';
 import useFetch from '@/shared/hooks/useFetch';
 import { ADD_AQAR_FORM } from '@/shared/services/api/Api';
 import { Loader } from '@/shared/components/Loader';
+import styles from './styles.module.scss';
 
-import { FirstForm } from './components';
+import { FirstForm, SecondForm, Submit } from './components';
+import useMutationData from '@/shared/hooks/useMutationData';
 
 export const AddAqar: React.FC = () => {
   const [current, setCurrent] = useState(0);
+  const [formData, setFormData] = useState<any>({
+    files: [],
+    for: '',
+    title: '',
+    category_propery_id: '',
+    price: '',
+    area_id: '',
+    city_id: '',
+    hai_id: '',
+    purpose: '',
+    info: {
+      description: '',
+      size: '',
+      meter_price: '',
+      front: '',
+      street_size: '',
+      sleep_rooms: '',
+      halls: '',
+      bathrooms: '',
+      level: '',
+      is_new: '',
+      age: '',
+      has_kitchen: '',
+      has_elevator: '',
+      has_cooler: '',
+      has_guard: '',
+    },
+    show_phone: '',
+    location: {
+      lat: '',
+      lng: '',
+      address: '',
+    },
+  });
 
   const handleNext = () => {
     setCurrent(current + 1);
@@ -18,22 +54,55 @@ export const AddAqar: React.FC = () => {
     setCurrent(current - 1);
   };
 
-  const { isLoading, isError, error, data, isRefetching } =
-    useFetch(ADD_AQAR_FORM);
-  console.log(data);
+  const {
+    mutate: tryAddAqar,
+    isSuccess,
+    data: addAqar,
+  } = useMutationData('aqars', formData, {
+    headers: {
+      'Content-Type': 'multipart/form-data',
+    },
+  });
 
-  if (isError) console.error(error.message);
-  if (isLoading || isRefetching)
-    return <Loader visible={isLoading || isRefetching} />;
+  const { isLoading, data, isRefetching } = useFetch(ADD_AQAR_FORM);
+
+  const [hasMoreDetails, setHasMoreDetails] = useState(false);
+
+  useEffect(() => {
+    if (isSuccess) {
+      console.log(addAqar);
+    }
+  }, [isSuccess]);
+
+  const handleSubmit = async () => {
+    try {
+      await tryAddAqar();
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   const steps = [
     {
       title: 'First',
-      content: <FirstForm data={data?.data} />,
+      content: (
+        <FirstForm
+          data={data?.data}
+          setMoreDetails={setHasMoreDetails}
+          setForm={setFormData}
+          formData={formData}
+        />
+      ),
     },
     {
       title: 'Second',
-      content: <h1>'Second-content'</h1>,
+      content: (
+        <SecondForm
+          data={data?.data}
+          setForm={setFormData}
+          formData={formData}
+        />
+      ),
     },
   ];
 
@@ -45,28 +114,52 @@ export const AddAqar: React.FC = () => {
         <div className="section_head_wrapper">
           <h2 className="section_main_title__">إضافة إعلان جديد</h2>
         </div>
-        <Steps current={current} items={items} />
-        <div>{steps[current].content}</div>
-        <div style={{ marginTop: 24 }}>
-          {current < steps.length - 1 && (
-            <Button type="primary" onClick={() => handleNext()}>
-              Next
-            </Button>
-          )}
-          {current === steps.length - 1 && (
-            <Button
-              type="primary"
-              onClick={() => message.success('Processing complete!')}
-            >
-              Done
-            </Button>
-          )}
-          {current > 0 && (
-            <Button style={{ margin: '0 8px' }} onClick={() => handlePrev()}>
-              Previous
-            </Button>
-          )}
-        </div>
+        {isLoading || isRefetching ? (
+          <Loader visible={isLoading || isRefetching} />
+        ) : (
+          <>
+            <Steps current={current} items={items} />
+            <div>{steps[current].content}</div>
+
+            <div className="buttonsWrapper">
+              {current === 0 && (
+                <>
+                  {hasMoreDetails ? (
+                    <button
+                      type="button"
+                      className="button__ primary__ fixed_size__ secondary_rounded__ margin_start_auto__ mt-5"
+                      onClick={handleNext}
+                    >
+                      التالي
+                    </button>
+                  ) : (
+                    <Submit
+                      formData={formData}
+                      setFormData={setFormData}
+                      handleSubmit={handleSubmit}
+                    />
+                  )}
+                </>
+              )}
+              {current === 1 && (
+                <div className={styles.prevAndSubmitWrapper}>
+                  <Submit
+                    formData={formData}
+                    setFormData={setFormData}
+                    handleSubmit={handleSubmit}
+                  />
+                  <button
+                    type="button"
+                    className="button__ grey__ fixed_size__ secondary_rounded__ margin_start_auto__"
+                    onClick={handlePrev}
+                  >
+                    السابق
+                  </button>
+                </div>
+              )}
+            </div>
+          </>
+        )}
       </Container>
     </main>
   );

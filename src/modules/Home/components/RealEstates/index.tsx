@@ -51,7 +51,7 @@ export const RealEstates: React.FC = () => {
 
           <Link
             to="/aqars"
-            className="link__ primary__ outline__ fixed_size__ main_rounded__ center margin_top"
+            className="link primary__ outline__ fixed_size__ main_rounded__ center margin_top"
           >
             عرض المزيد
           </Link>

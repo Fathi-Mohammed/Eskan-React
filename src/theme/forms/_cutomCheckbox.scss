@@ -1,0 +1,38 @@
+.checkbox {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  input[type='checkbox'] {
+    display: none;
+
+    &:checked {
+      ~ .checkboxCircle {
+        border-color: $primaryColor;
+        background-image: url('@/assets/images/shapes/checkbox.svg');
+        background-repeat: no-repeat;
+        background-position: center center;
+      }
+    }
+  }
+
+  .checkboxCircle {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 0.5rem;
+  }
+
+  .checkboxText {
+    display: inline-block;
+    vertical-align: middle;
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-inline-start: 0.5rem;
+  }
+}

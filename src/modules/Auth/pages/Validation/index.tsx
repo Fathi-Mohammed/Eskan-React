@@ -61,7 +61,7 @@ export const Validation = () => {
             <Input.OTP length={5} onChange={handleChange} />
           </Form.Item>
           <button
-            className={`link__ primary__ full_width main_rounded__ mb-4 ${styles.link}`}
+            className={`link primary__ full_width main_rounded__ mb-4 ${styles.link}`}
           >
             {t('verify')}
           </button>

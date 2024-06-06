@@ -15,10 +15,19 @@ const getBase64 = (file: FileType): Promise<string> =>
     reader.onerror = (error) => reject(error);
   });
 
-export const UploadFiles: React.FC = () => {
+type Props = {
+  setForm: (formUpdate: any) => void;
+  formData: any;
+};
+
+export const UploadFiles: React.FC<Props> = ({ setForm, formData }) => {
+  const files = formData.files.map((file) => {
+    const url = URL.createObjectURL(file);
+    return { ...file, url };
+  });
   const [previewOpen, setPreviewOpen] = useState(false);
   const [previewImage, setPreviewImage] = useState('');
-  const [fileList, setFileList] = useState<UploadFile[]>([]);
+  const [fileList, setFileList] = useState<UploadFile[]>(files || []);
 
   const handlePreview = async (file: UploadFile) => {
     if (!file.url && !file.preview) {
@@ -29,8 +38,20 @@ export const UploadFiles: React.FC = () => {
     setPreviewOpen(true);
   };
 
-  const handleChange: UploadProps['onChange'] = ({ fileList: newFileList }) =>
+  const handleChange: UploadProps['onChange'] = ({ fileList: newFileList }) => {
     setFileList(newFileList);
+    const formDataToSubmit = new FormData();
+
+    newFileList.forEach((file) => {
+      formDataToSubmit.append('files', file.originFileObj as FileType);
+    });
+
+    console.log(formDataToSubmit.getAll('files'));
+    setForm((prevForm) => ({
+      ...prevForm,
+      files: formDataToSubmit.getAll('files'),
+    }));
+  };
 
   const handleRemove = (file: UploadFile) => {
     setFileList((prevFileList) =>

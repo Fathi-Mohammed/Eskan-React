@@ -24,6 +24,12 @@
     font-size: 1.6rem;
     font-weight: 700;
   }
+
+  &.smallPlaceholder {
+    .ant-select-selection-placeholder {
+      font-size: 1.3rem;
+    }
+  }
 }
 
 .ant-select-item-option-selected {

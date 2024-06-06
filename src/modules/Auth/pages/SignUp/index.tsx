@@ -145,7 +145,7 @@ export const SignUp = () => {
               </button>
               <Link
                 to="/auth/sign-up"
-                className={`link__ primary__ full_width main_rounded__ outline__ ${styles.link}`}
+                className={`link primary__ full_width main_rounded__ outline__ ${styles.link}`}
               >
                 {t('auth.alreadyHaveAccount')}
               </Link>

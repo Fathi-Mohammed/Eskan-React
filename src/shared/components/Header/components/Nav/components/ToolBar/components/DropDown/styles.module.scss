@@ -1,0 +1,18 @@
+@import '@/theme/shared.scss';
+
+.userIcon {
+  width: 4.8rem;
+  height: 4.8rem;
+  border-radius: 50%;
+  overflow: hidden;
+  padding: 0.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  figure {
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+  }
+}

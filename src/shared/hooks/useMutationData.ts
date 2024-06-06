@@ -15,14 +15,17 @@ const useMutationData = (endpoint, data?, options?) => {
   if (!content) throw new Error('useAuth must be used within a AuthProvider');
   const { user } = content;
 
+  const { headers, ...rest } = options || {};
+
   return useMutation({
     mutationFn: () => {
       return mutateData(endpoint, data, {
+        ...rest,
         headers: {
           Authorization: `Bearer ${user?.access_token}`,
           lang: i18n.language,
+          ...headers,
         },
-        ...options,
       });
     },
   });

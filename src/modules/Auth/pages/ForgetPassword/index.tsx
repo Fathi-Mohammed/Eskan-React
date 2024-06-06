@@ -72,7 +72,7 @@ export const ForgetPassword = () => {
             onChange={(e) => setMobile(e.target.value)}
           />
           <button
-            className={`link__ primary__ full_width main_rounded__ mb-4 ${styles.link}`}
+            className={`link primary__ full_width main_rounded__ mb-4 ${styles.link}`}
           >
             {t('sendCode')}
           </button>

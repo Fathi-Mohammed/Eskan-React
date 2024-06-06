@@ -16,6 +16,7 @@ import useFetch from './shared/hooks/useFetch';
 import { SETTINGS } from './shared/services/api/Api';
 import { Loader } from './shared/components/Loader';
 import { message } from 'antd';
+import { ProtectedRoute } from '@/shared/components/ProtectedRoute';
 
 export default function App() {
   useLocalizeDocumentAttributes();
@@ -33,10 +34,12 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/auth/*" element={<Auth />} />
         <Route path="/contact-us" element={<ContactUs />} />
-        <Route path="/add-aqar" element={<AddAqar />} />
         <Route path="/aqars" element={<RealEstates />} />
         <Route path="/aqars/:id" element={<RealEstate />} />
         <Route path="/aqars/:id/owner_rates" element={<OwnerRates />} />
+        <Route element={<ProtectedRoute />}>
+          <Route path="/add-aqar" element={<AddAqar />} />
+        </Route>
       </Routes>
       <Footer data={data?.data} />
     </>

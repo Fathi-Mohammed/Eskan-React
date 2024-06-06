@@ -22,6 +22,7 @@ interface User {
 
 interface AuthContextProps {
   user: User | null;
+  loading: boolean;
   login: (userData: User) => void;
   logout: () => void;
 }
@@ -34,12 +35,14 @@ interface AuthProviderProps {
 
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [user, setUser] = useState<User | null>(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const token = getCookie('auth_token');
     if (token) {
       setUser(JSON.parse(token)); // Assuming token is a JSON stringified user object
     }
+    setLoading(false);
   }, []);
 
   const login = (userData: User) => {
@@ -58,7 +61,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ user, login, logout }}>
+    <AuthContext.Provider value={{ user, loading, login, logout }}>
       {children}
     </AuthContext.Provider>
   );

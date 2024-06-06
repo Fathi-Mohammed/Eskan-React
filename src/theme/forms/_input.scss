@@ -21,6 +21,7 @@
   &:focus,
   &:hover {
     border: 1px solid $primaryColor !important;
+    background-color: $inputBackgroundColor !important;
   }
 
   &::-webkit-outer-spin-button,
@@ -39,6 +40,12 @@
   &:focus {
     &::placeholder {
       opacity: 0;
+    }
+  }
+
+  &.smallPlaceholder {
+    &::placeholder {
+      font-size: 1.3rem;
     }
   }
 }

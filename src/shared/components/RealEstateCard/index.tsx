@@ -40,7 +40,6 @@ export const RealEstateCard: React.FC<props> = ({ cardData }) => {
   } = cardData;
 
   const { data, mutate } = useMutationData(`${AQARS}/${id}/like`);
-  console.log(data);
 
   const openNotificationWithIcon = (
     type: NotificationType,

@@ -27,6 +27,7 @@ type type = {
 };
 
 type categories = {
+  id: number;
   value: number;
   label: string;
 };

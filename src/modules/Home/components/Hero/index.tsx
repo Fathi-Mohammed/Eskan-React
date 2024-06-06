@@ -28,7 +28,7 @@ export const Hero: React.FC<props> = ({
             <p className={styles.subtitle}>{description}</p>
             <Link
               to="/aqars"
-              className="link__ primary__ fixed_size__ main_rounded__ center_sm"
+              className="link primary__ fixed_size__ main_rounded__ center_sm"
             >
               {t('BrowseRealEstate')}
             </Link>

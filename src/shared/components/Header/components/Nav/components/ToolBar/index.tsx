@@ -1,5 +1,4 @@
-import { useContext } from 'react';
-import AuthContext from '@/shared/context/AuthProvider';
+import { useAuth } from '@/shared/context/AuthProvider';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { AiOutlineGlobal } from 'react-icons/ai';
@@ -10,16 +9,14 @@ import AddIcon from '@/assets/images/shapes/header_shapes/header_add_icon.svg?re
 import ProfileIcon from '@/assets/images/shapes/header_shapes/header_profile_icon.svg?react';
 
 import styles from './styles.module.scss';
+import { DropDown } from './components';
 
 type props = {
   onClick: () => void;
 };
 
 export const ToolBar = ({ onClick }: props) => {
-  const context = useContext(AuthContext);
-  if (context === undefined) {
-    throw new Error('AuthProvider is not defined');
-  }
+  const context = useAuth();
 
   const { t, i18n } = useTranslation();
   const { changeLanguage } = useLanguage();
@@ -48,12 +45,7 @@ export const ToolBar = ({ onClick }: props) => {
       </li>
       {context.user ? (
         <li className={`${styles.listItem} ${styles.profileButtonItem}`}>
-          <button
-            onClick={context.logout}
-            className="button__ secondary__ outline__ full_rounded__ circle__"
-          >
-            Out
-          </button>
+          <DropDown />
         </li>
       ) : (
         <li className={`${styles.listItem} ${styles.profileButtonItem}`}>
@@ -65,23 +57,6 @@ export const ToolBar = ({ onClick }: props) => {
           </Link>
         </li>
       )}
-      {/* <li className={`${styles.listItem} ${styles.profileButtonItem}`}>
-        <Link
-          to="/auth/sign-in"
-          className="button__ secondary__ outline__ full_rounded__ circle__"
-        >
-          <ProfileIcon />
-        </Link>
-      </li>
-      
-      <li className={`${styles.listItem} ${styles.profileButtonItem}`}>
-        <Link
-          to="/auth/sign-in"
-          className="button__ secondary__ outline__ full_rounded__ circle__"
-        >
-          Out
-        </Link>
-      </li> */}
       <li className={`${styles.listItem} ${styles.langButtonItem}`}>
         <button
           className={`button__ secondary__ outline__ circle__ ${styles.langButton}`}

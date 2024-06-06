@@ -14,9 +14,11 @@ type props = {
     mobile: string;
     rate: number;
   };
+
+  showPhone: boolean;
 };
 
-export const UserInfo: React.FC<props> = ({ data }) => {
+export const UserInfo: React.FC<props> = ({ data, showPhone }) => {
   const { id } = useParams();
   const { name, image, mobile, rate } = data || {};
   return (
@@ -36,14 +38,16 @@ export const UserInfo: React.FC<props> = ({ data }) => {
       </div>
 
       <div className={styles.links}>
-        <Link
-          to={`callto:${mobile}`}
-          target="_blank"
-          className="link__ lessor_link__ lessor_phone__"
-        >
-          <PhoneIcon />
-        </Link>
-        <Link to="/chat" className="link__ lessor_link__ lessor_chat__">
+        {showPhone && (
+          <Link
+            to={`callto:${mobile}`}
+            target="_blank"
+            className="link lessor_link lessor_phone__"
+          >
+            <PhoneIcon />
+          </Link>
+        )}
+        <Link to="/chat" className="link lessor_link lessor_chat__">
           <ChatIcon />
         </Link>
       </div>

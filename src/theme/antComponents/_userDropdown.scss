@@ -1,0 +1,33 @@
+.ant-dropdown-menu {
+  border-radius: $secondaryBorderRadius !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  box-shadow: 0 0 30px rgba(#fff, 0.1) !important;
+
+  .ant-dropdown-menu-item {
+    padding: 1rem 2rem !important;
+
+    a,
+    button {
+      color: $headingSecondaryColor !important;
+      text-decoration: none !important;
+      font-size: 1.4rem;
+      height: fit-content !important;
+    }
+
+    &.ant-dropdown-menu-item-active {
+      background-color: $primaryColor !important;
+
+      a,
+      button {
+        color: #fff !important;
+      }
+
+      svg {
+        path {
+          stroke: #fff !important;
+        }
+      }
+    }
+  }
+}
