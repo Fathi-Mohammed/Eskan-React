@@ -6,6 +6,7 @@
   animation: skeletonLoading 1s linear infinite alternate;
   opacity: 0.7;
   display: block;
+  flex-shrink: 0;
 
   &.last {
     width: 85%;

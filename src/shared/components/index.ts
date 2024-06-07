@@ -5,3 +5,4 @@ export { Rating } from './Rating';
 export { RealEstateCard } from './RealEstateCard';
 export { FetchingError } from './FetchingError';
 export { Skeleton } from './Skeleton';
+export { RealEstateLoadingCard } from './RealEstateLoadingCard';

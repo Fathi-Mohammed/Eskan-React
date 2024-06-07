@@ -28,7 +28,9 @@ export const Skeleton: React.FC<props> = ({
         <div
           key={Math.random()}
           className={
-            styles.skeleton + ' ' + (i === count - 1 ? styles.last : '')
+            styles.skeleton +
+            ' ' +
+            (i === count - 1 && count > 1 ? styles.last : '')
           }
           style={style}
         />

@@ -1,0 +1,19 @@
+@import '@/theme/shared.scss';
+
+.card {
+  width: 100%;
+  border-radius: $mainBorderRadius;
+  transition: all 0.3s ease-in-out;
+  background-color: rgba(#fff, 0.2);
+  padding: 3.3rem 1rem;
+  margin-top: 6rem;
+}
+
+.imgWrapper {
+  display: flex;
+  border-radius: $mainBorderRadius;
+  overflow: hidden;
+  margin-top: -9.3rem;
+  margin-bottom: 2.4rem;
+  position: relative;
+}

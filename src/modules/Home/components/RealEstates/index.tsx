@@ -20,7 +20,7 @@ export const RealEstates: React.FC = () => {
 
   const { VITE_AQARS } = import.meta.env;
 
-  const { isLoading, isError, error, data, isRefetching, refetch } = useApi.get(
+  const { isLoading, isError, error, data, refetch, isRefetching } = useApi.get(
     VITE_AQARS,
     {},
     queryString,
@@ -41,28 +41,26 @@ export const RealEstates: React.FC = () => {
   if (isError) message.error(error.message);
 
   return (
-    <>
-      {(isLoading || isRefetching) && <h1>Loading...</h1>}
-      <main className={`${styles.realEstates} default_section`}>
-        <Container>
-          <div className="section_head_wrapper">
-            <h2 className="section_main_title__">الإعلانات</h2>
-          </div>
+    <section className={`${styles.realEstates} default_section`}>
+      <Container>
+        <div className="section_head_wrapper">
+          <h2 className="section_main_title__">الإعلانات</h2>
+        </div>
 
-          <FilterControllers
-            data={filter_form}
-            handleSelectChange={handleSelectChange}
-          />
-          <FilterResults cardData={aqars} />
+        <FilterControllers
+          data={filter_form}
+          handleSelectChange={handleSelectChange}
+          isLoading={isLoading}
+        />
+        <FilterResults cardData={aqars} isLoading={isRefetching || isLoading} />
 
-          <Link
-            to="/aqars"
-            className="link primary__ outline__ fixed_size__ main_rounded__ center margin_top"
-          >
-            عرض المزيد
-          </Link>
-        </Container>
-      </main>
-    </>
+        <Link
+          to="/aqars"
+          className="link primary__ outline__ fixed_size__ main_rounded__ center margin_top"
+        >
+          عرض المزيد
+        </Link>
+      </Container>
+    </section>
   );
 };

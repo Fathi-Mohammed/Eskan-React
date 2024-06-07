@@ -19,7 +19,7 @@ export const Home = () => {
   return (
     <>
       <Hero data={data?.data.intro} isLoading={isLoading} />
-      {/* <RealEstates /> */}
+      <RealEstates />
     </>
   );
 };

@@ -1,17 +1,12 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { FilterControllers, FilterResults } from './components';
 import styles from './styles.module.scss';
-import { AQARS } from '@/shared/services/api/Api';
-import useFetch from '@/shared/hooks/useApi';
-import { message, Pagination } from 'antd';
+import { Pagination, message } from 'antd';
 import { buildQueryString } from './utils/buildQueryString';
-import { useTranslation } from 'react-i18next';
-import { tabTitle } from '@/shared/utils/tabTitle';
+import useApi from '@/shared/hooks/useApi';
 
 export const RealEstates: React.FC = () => {
-  const { t } = useTranslation();
-  tabTitle(t('pages.ads'));
   const [filterData, setFilterData] = useState({
     purpose: '',
     for: '',
@@ -23,8 +18,10 @@ export const RealEstates: React.FC = () => {
 
   const queryString = buildQueryString(filterData);
 
-  const { isLoading, isError, error, data, isRefetching } = useFetch(
-    AQARS,
+  const { VITE_AQARS } = import.meta.env;
+
+  const { isLoading, isError, error, data, refetch, isRefetching } = useApi.get(
+    VITE_AQARS,
     {},
     queryString,
   );
@@ -37,30 +34,34 @@ export const RealEstates: React.FC = () => {
       [type]: value,
     });
   };
+
+  useEffect(() => {
+    refetch();
+  }, []);
+
   if (isError) message.error(error.message);
 
   return (
-    <>
-      {(isLoading || isRefetching) && <h1>Loading...</h1>}
-      <main className={`${styles.realEstates} default_section`}>
-        <Container>
-          <div className="section_head_wrapper">
-            <h2 className="section_main_title__">الإعلانات</h2>
-          </div>
+    <main className={`${styles.realEstates} default_page`}>
+      <Container>
+        <div className="section_head_wrapper">
+          <h2 className="section_main_title__">الإعلانات</h2>
+        </div>
 
-          <FilterControllers
-            data={filter_form}
-            handleSelectChange={handleSelectChange}
-          />
-          <FilterResults cardData={aqars} />
-          <Pagination
-            defaultCurrent={currentPage}
-            total={total}
-            pageSize={perPage}
-            onChange={(page) => setFilterData({ ...filterData, page })}
-          />
-        </Container>
-      </main>
-    </>
+        <FilterControllers
+          data={filter_form}
+          handleSelectChange={handleSelectChange}
+          isLoading={isLoading}
+        />
+        <FilterResults cardData={aqars} isLoading={isRefetching || isLoading} />
+
+        <Pagination
+          defaultCurrent={currentPage}
+          total={total}
+          pageSize={perPage}
+          onChange={(page) => setFilterData({ ...filterData, page })}
+        />
+      </Container>
+    </main>
   );
 };
