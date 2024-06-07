@@ -41,7 +41,7 @@ export const SetNewPassword = () => {
 
   return (
     <Container>
-      <div className="default_form">
+      <div className="defaultForm">
         <AuthTitle
           center
           title={t('auth.newPasswordTitle')}

@@ -8,6 +8,7 @@ import {
   RealEstate,
   OwnerRates,
   AddAqar,
+  Profile,
 } from './modules';
 import { Route, Routes } from 'react-router-dom';
 import useLocalizeDocumentAttributes from '@/shared/hooks/useLocalizeDocumentAttributes';
@@ -39,6 +40,7 @@ export default function App() {
         <Route path="/aqars/:id/owner_rates" element={<OwnerRates />} />
         <Route element={<ProtectedRoute />}>
           <Route path="/add-aqar" element={<AddAqar />} />
+          <Route path="/profile" element={<Profile />} />
         </Route>
       </Routes>
       <Footer data={data?.data} />

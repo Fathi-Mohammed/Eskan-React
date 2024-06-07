@@ -46,7 +46,6 @@ export const UploadFiles: React.FC<Props> = ({ setForm, formData }) => {
       formDataToSubmit.append('files', file.originFileObj as FileType);
     });
 
-    console.log(formDataToSubmit.getAll('files'));
     setForm((prevForm) => ({
       ...prevForm,
       files: formDataToSubmit.getAll('files'),

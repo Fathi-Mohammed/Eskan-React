@@ -28,7 +28,6 @@ export const ForgetPassword = () => {
     e.preventDefault();
 
     await mutateAsync();
-    console.log(mobile);
 
     if (isSuccess) {
       console.log(data);

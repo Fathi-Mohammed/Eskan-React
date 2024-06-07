@@ -25,7 +25,6 @@ export const DropDown: React.FC = () => {
     logout();
     try {
       await mutate();
-      console.log(data);
       navigate('/', { replace: true });
     } catch (error) {
       console.log(error);

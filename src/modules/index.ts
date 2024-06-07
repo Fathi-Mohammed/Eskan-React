@@ -6,3 +6,4 @@ export { RealEstates } from './RealEstates';
 export { RealEstate } from './RealEstate';
 export { OwnerRates } from './OwnerRates';
 export { AddAqar } from './AddAqar';
+export { Profile } from './Profile';

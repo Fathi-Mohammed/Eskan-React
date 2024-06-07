@@ -1,0 +1,82 @@
+@import '@/theme/shared.scss';
+
+.formWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 1.5rem;
+}
+
+.profileImageWrapper {
+  width: 14.2rem;
+  height: 14.2rem;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  border: 2px solid rgba($primaryColor, 0.16);
+  padding: 2rem !important;
+  position: relative;
+  cursor: pointer;
+
+  figure {
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-color: rgba(#000, 0.58);
+      opacity: 0;
+      transition: 0.5s;
+    }
+
+    &::before {
+      content: url('@/assets/images/shapes/upload_file_icon.svg');
+      position: absolute;
+      width: 3rem;
+      height: 3rem;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 10;
+      opacity: 0;
+      transition: 0.5s;
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 12rem;
+    height: 12rem;
+    border-radius: 50%;
+    border: 2px solid rgba($primaryColor, 0.57);
+    background-color: transparent;
+  }
+
+  &:hover {
+    figure {
+      &::after,
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.name {
+  text-align: center;
+  color: $primaryColor;
+  font-weight: 700;
+  font-size: 1.8rem;
+}

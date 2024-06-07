@@ -9,7 +9,7 @@
   justify-content: center;
   text-decoration: none;
   gap: 10px;
-  height: 48px;
+  height: 6.6rem;
   color: #fff;
   font-size: 1.6rem;
   font-weight: 400;
@@ -325,6 +325,7 @@
   // Other
   // ===================================================================
   &.circle__ {
+    height: 4.8rem !important;
     border-radius: 50%;
     aspect-ratio: 1 / 1;
 
@@ -358,6 +359,7 @@
 
   &.header_add_button__ {
     color: $primaryColor;
+    height: 4.8rem;
   }
 
   &.add_to_fav__ {
