@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Steps } from 'antd';
 import { Container } from 'react-bootstrap';
-import useFetch from '@/shared/hooks/useFetch';
+import useFetch from '@/shared/hooks/useApi';
 import { ADD_AQAR_FORM } from '@/shared/services/api/Api';
 import { Loader } from '@/shared/components/Loader';
 import styles from './styles.module.scss';

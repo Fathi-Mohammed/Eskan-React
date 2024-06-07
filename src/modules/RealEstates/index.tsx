@@ -3,7 +3,7 @@ import { Container } from 'react-bootstrap';
 import { FilterControllers, FilterResults } from './components';
 import styles from './styles.module.scss';
 import { AQARS } from '@/shared/services/api/Api';
-import useFetch from '@/shared/hooks/useFetch';
+import useFetch from '@/shared/hooks/useApi';
 import { message, Pagination } from 'antd';
 import { buildQueryString } from './utils/buildQueryString';
 import { useTranslation } from 'react-i18next';

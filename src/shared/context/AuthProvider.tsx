@@ -25,6 +25,7 @@ interface AuthContextProps {
   loading: boolean;
   login: (userData: User) => void;
   logout: () => void;
+  updateUser: (userData: User) => void;
 }
 
 const AuthContext = createContext<AuthContextProps | undefined>(undefined);
@@ -60,8 +61,17 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     window.location.reload();
   };
 
+  const updateUser = (userData: User) => {
+    const data = JSON.stringify(userData);
+    setCookie('auth_token', data, {
+      path: '/',
+      expires: new Date('9999-12-31T23:59:59.999Z'),
+    });
+    setUser(userData);
+  };
+
   return (
-    <AuthContext.Provider value={{ user, loading, login, logout }}>
+    <AuthContext.Provider value={{ user, loading, login, logout, updateUser }}>
       {children}
     </AuthContext.Provider>
   );

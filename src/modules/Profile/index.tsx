@@ -3,11 +3,10 @@ import { Container } from 'react-bootstrap';
 
 import styles from './styles.module.scss';
 import { Image, Rating } from '@/shared/components';
-import useFetch from '@/shared/hooks/useFetch';
 import { Loader } from '@/shared/components/Loader';
 import { Link } from 'react-router-dom';
-import useMutationData from '@/shared/hooks/useMutationData';
 import { useAuth } from '@/shared/context/AuthProvider';
+import useApi from '@/shared/hooks/useApi';
 
 type formData = {
   name: string;
@@ -18,7 +17,8 @@ export const Profile: React.FC = () => {
   const [formData, setFormData] = useState<formData>({
     name: '',
   });
-  const { data, isLoading, isError, error, isSuccess } = useFetch('myprofile');
+  const { data, isLoading, isError, error, isSuccess } =
+    useApi.get('myprofile');
   const { image, name, rate, mobile } = data?.data || {};
   const { updateUser } = useAuth();
 
@@ -42,9 +42,9 @@ export const Profile: React.FC = () => {
     data: userData,
     mutate,
     isSuccess: isMutationSuccess,
-  } = useMutationData('profile/edit', formData, {
+  } = useApi.post('profile/edit', formData, {
     headers: {
-      'Content-Type': 'multipart/form-data',
+      // 'Content-Type': 'multipart/form-data',
     },
   });
 
@@ -58,7 +58,8 @@ export const Profile: React.FC = () => {
 
   useEffect(() => {
     if (isSuccess) {
-      setFormData({ ...formData, name: name });
+      console.log(data);
+      setFormData({ ...formData, name: name || '' });
     }
   }, [data, isSuccess]);
 
@@ -71,6 +72,7 @@ export const Profile: React.FC = () => {
 
   if (isError) return <div>{error.message}</div>;
   if (isLoading) return <Loader visible={isLoading} />;
+
   return (
     <main className="default_page defaultForm">
       <Container>
@@ -93,13 +95,13 @@ export const Profile: React.FC = () => {
             onChange={handleChangeInputs}
             name="name"
             type="text"
-            value={formData.name}
+            value={formData.name || ''}
           />
           <input
             className="input readOnly"
             name="mobile"
             type="number"
-            value={mobile}
+            value={mobile || ''}
             readOnly
           />
           <button
@@ -108,7 +110,6 @@ export const Profile: React.FC = () => {
           >
             حفظ التعديلات
           </button>
-
           <Link className="" to="/profile/change_password">
             تغيير كلمة المرور
           </Link>

@@ -13,15 +13,15 @@ import {
 import { Route, Routes } from 'react-router-dom';
 import useLocalizeDocumentAttributes from '@/shared/hooks/useLocalizeDocumentAttributes';
 import { tabIcon } from './shared/utils/tabIcon';
-import useFetch from './shared/hooks/useFetch';
 import { SETTINGS } from './shared/services/api/Api';
 import { Loader } from './shared/components/Loader';
 import { message } from 'antd';
 import { ProtectedRoute } from '@/shared/components/ProtectedRoute';
+import useApi from './shared/hooks/useApi';
 
 export default function App() {
   useLocalizeDocumentAttributes();
-  const { isLoading, data, isError, error } = useFetch(SETTINGS);
+  const { isLoading, data, isError, error } = useApi.get(SETTINGS);
   tabIcon(data?.data.favicon);
 
   if (isError) message.error(error.message);

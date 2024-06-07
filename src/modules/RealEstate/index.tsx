@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 
-import useFetch from '@/shared/hooks/useFetch';
+import useFetch from '@/shared/hooks/useApi';
 
 import { AQARS } from '@/shared/services/api/Api';
 import { useParams } from 'react-router-dom';

@@ -8,7 +8,7 @@ import { Input } from '../../components';
 import { RESET } from '@/shared/services/api/Api';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useState } from 'react';
-import Axios from '@/shared/services/Axios';
+// import {Axios} from '@/shared/services/Axios';
 import useMutationData from '@/shared/hooks/useMutationData';
 
 export const SetNewPassword = () => {

@@ -1,12 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { FilterControllers, FilterResults } from './components';
 import { Link } from 'react-router-dom';
 import styles from './styles.module.scss';
-import { AQARS } from '@/shared/services/api/Api';
-import useFetch from '@/shared/hooks/useFetch';
 import { message } from 'antd';
 import { buildQueryString } from './utils/buildQueryString';
+import useApi from '@/shared/hooks/useApi';
 
 export const RealEstates: React.FC = () => {
   const [filterData, setFilterData] = useState({
@@ -19,8 +18,10 @@ export const RealEstates: React.FC = () => {
 
   const queryString = buildQueryString(filterData);
 
-  const { isLoading, isError, error, data, isRefetching } = useFetch(
-    AQARS,
+  const { VITE_AQARS } = import.meta.env;
+
+  const { isLoading, isError, error, data, isRefetching, refetch } = useApi.get(
+    VITE_AQARS,
     {},
     queryString,
   );
@@ -32,6 +33,11 @@ export const RealEstates: React.FC = () => {
       [type]: value,
     });
   };
+
+  useEffect(() => {
+    refetch();
+  }, []);
+
   if (isError) message.error(error.message);
 
   return (

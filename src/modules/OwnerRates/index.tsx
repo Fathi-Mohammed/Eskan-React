@@ -1,4 +1,4 @@
-import useFetch from '@/shared/hooks/useFetch';
+import useFetch from '@/shared/hooks/useApi';
 import { AQARS, RATE, USER } from '@/shared/services/api/Api';
 import { Col, Container, Row } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';

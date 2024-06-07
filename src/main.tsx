@@ -9,6 +9,7 @@ import '@/shared/services/i18n/config.ts';
 import { ScrollToTop } from '@/shared/components/ScrollToTop';
 import { LanguageProvider } from './shared/context/languageContext';
 import { AuthProvider } from './shared/context/AuthProvider';
+import { AxiosConfig } from './shared/services/Axios';
 
 const queryClient = new QueryClient();
 
@@ -18,6 +19,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       <QueryClientProvider client={queryClient}>
         <LanguageProvider>
           <AuthProvider>
+            <AxiosConfig />
             <App />
           </AuthProvider>
         </LanguageProvider>

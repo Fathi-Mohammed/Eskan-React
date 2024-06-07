@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Cards, Form } from './components';
 import AuthContext from '@/shared/context/AuthProvider';
-import Axios from '@/shared/services/Axios';
+import { Axios } from '@/shared/services/Axios';
 import { AQARS, COMMENT } from '@/shared/services/api/Api';
 import { useParams } from 'react-router-dom';
 import { notification } from 'antd';

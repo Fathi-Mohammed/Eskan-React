@@ -1,0 +1,22 @@
+.skeleton {
+  height: 0.5rem;
+  width: 100%;
+  margin-bottom: 0.25rem;
+  border-radius: 0.3rem;
+  animation: skeletonLoading 1s linear infinite alternate;
+  opacity: 0.7;
+  display: block;
+
+  &.last {
+    width: 85%;
+  }
+}
+
+@keyframes skeletonLoading {
+  from {
+    background-color: hsl(200, 20%, 70%);
+  }
+  to {
+    background-color: hsl(200, 20%, 95%);
+  }
+}

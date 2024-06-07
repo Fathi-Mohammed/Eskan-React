@@ -2,5 +2,5 @@ import { useTranslation } from 'react-i18next';
 
 export const tabTitle = (title: string) => {
   const { t } = useTranslation();
-  document.title =  t("Eskan") + " | " + title;
-}
+  document.title = t('Eskan') + ' | ' + t(title);
+};

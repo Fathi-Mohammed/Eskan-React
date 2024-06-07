@@ -1,25 +1,25 @@
-import { useTranslation } from 'react-i18next';
 import { Hero, RealEstates } from './components';
 import { tabTitle } from '@/shared/utils/tabTitle';
-import useFetch from '@/shared/hooks/useFetch';
-import { Loader } from '@/shared/components/Loader';
-import { message } from 'antd';
-import { HOME } from '@/shared/services/api/Api';
+import useApi from '@/shared/hooks/useApi';
+import { FetchingError } from '@/shared/components';
 
 export const Home = () => {
-  const { t } = useTranslation();
-  tabTitle(t('Home'));
+  tabTitle('pages.home');
 
-  const { isLoading, isError, error, data, isRefetching } = useFetch(HOME);
+  const { VITE_HOME } = import.meta.env;
 
-  if (isError) message.error(error.message);
-  if (isLoading || isRefetching)
-    return <Loader visible={isLoading || isRefetching} />;
+  const { isLoading, data, isSuccess } = useApi.get(VITE_HOME);
+
+  if (isSuccess) {
+    if (data?.status === 'error') {
+      return <FetchingError error={data?.message} />;
+    }
+  }
 
   return (
     <>
-      {data?.data && <Hero data={data?.data.intro} />}
-      <RealEstates />
+      <Hero data={data?.data.intro} isLoading={isLoading} />
+      {/* <RealEstates /> */}
     </>
   );
 };

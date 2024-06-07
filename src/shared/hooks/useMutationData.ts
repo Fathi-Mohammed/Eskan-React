@@ -1,5 +1,5 @@
 import { useMutation } from '@tanstack/react-query';
-import Axios from '../services/Axios';
+import { Axios } from '../services/Axios';
 import { useTranslation } from 'react-i18next';
 import { useContext } from 'react';
 import AuthContext from '../context/AuthProvider';
