@@ -1,4 +1,3 @@
-import { Col, Row } from 'antd';
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import NotFound from '@/assets/images/shapes/notFound.svg?react';

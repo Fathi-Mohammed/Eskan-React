@@ -44,7 +44,27 @@ const useApi = (() => {
     });
   };
 
-  return { get, post };
+  const remove = (
+    endpoint: string,
+    data?: any,
+    options?: AxiosRequestConfig,
+  ) => {
+    const { headers, ...args } = options || {};
+
+    return useMutation({
+      mutationFn: () =>
+        fetchData(endpoint, {
+          method: 'DELETE',
+          data,
+          headers: {
+            ...headers,
+          },
+          ...args,
+        }),
+    });
+  };
+
+  return { get, post, remove };
 })();
 
 export default useApi;

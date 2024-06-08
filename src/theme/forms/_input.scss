@@ -43,6 +43,14 @@
     }
   }
 
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:active {
+    -webkit-box-shadow: unset !important;
+    background-color: transparent !important;
+  }
+
   &.smallPlaceholder {
     &::placeholder {
       font-size: 1.3rem;

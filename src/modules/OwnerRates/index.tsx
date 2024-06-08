@@ -1,10 +1,10 @@
-import useFetch from '@/shared/hooks/useApi';
 import { AQARS, RATE, USER } from '@/shared/services/api/Api';
 import { Col, Container, Row } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 import { ModalConent, NoData, RateCard, UserInfo } from './components';
 import { useEffect, useState } from 'react';
 import useMutationData from '@/shared/hooks/useMutationData';
+import useApi from '@/shared/hooks/useApi';
 
 type rate = {
   comment: string;
@@ -18,7 +18,7 @@ export const OwnerRates = () => {
     rate: 0,
   });
   const { id } = useParams();
-  const { data, refetch } = useFetch(AQARS + '/' + id + '/owner_rates');
+  const { data, refetch } = useApi.get(AQARS + '/' + id + '/owner_rates');
   const mutation = useMutationData(`${USER}/${id}/${RATE}`, rateData);
   const { name, image, rate, rates } = data?.data || {};
 

@@ -45,7 +45,7 @@ export const DropDown: React.FC = () => {
     {
       key: '3',
       icon: <ProductsIcon />,
-      label: <Link to="/advertisements">إعلاناتي</Link>,
+      label: <Link to="/my-aqars">إعلاناتي</Link>,
     },
     {
       key: '4',

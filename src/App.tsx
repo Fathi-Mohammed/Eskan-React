@@ -9,6 +9,7 @@ import {
   OwnerRates,
   AddAqar,
   Profile,
+  MyAqars,
 } from './modules';
 import { Route, Routes } from 'react-router-dom';
 import useLocalizeDocumentAttributes from '@/shared/hooks/useLocalizeDocumentAttributes';
@@ -18,6 +19,7 @@ import { Loader } from './shared/components/Loader';
 import { message } from 'antd';
 import { ProtectedRoute } from '@/shared/components/ProtectedRoute';
 import useApi from './shared/hooks/useApi';
+import { ToastContainer } from 'react-toastify';
 
 export default function App() {
   useLocalizeDocumentAttributes();
@@ -29,6 +31,16 @@ export default function App() {
 
   return (
     <>
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        draggable
+        theme="light"
+      />
       <Header data={data?.data} />
       <Routes>
         <Route path="*" element={<NotFound />} />
@@ -41,6 +53,7 @@ export default function App() {
         <Route element={<ProtectedRoute />}>
           <Route path="/add-aqar" element={<AddAqar />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/my-aqars" element={<MyAqars />} />
         </Route>
       </Routes>
       <Footer data={data?.data} />

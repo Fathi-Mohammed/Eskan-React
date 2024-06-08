@@ -9,4 +9,5 @@ export type aqarsInfo = {
   files: any;
   info: any;
   user: any;
+  show_phone: boolean;
 };

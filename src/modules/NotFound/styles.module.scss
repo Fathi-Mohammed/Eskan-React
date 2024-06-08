@@ -1,14 +1,52 @@
 @import '@/theme/shared.scss';
 
-.section {
+.wrapper {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 50vh;
+
+  svg {
+    width: 90%;
+  }
+
+  .mainTitle {
+    text-align: center;
+    display: block;
+    width: fit-content;
+    font-size: 2.4rem;
+    font-weight: 400;
+    line-height: 1.7;
+    margin: 2rem 0 0;
+    text-transform: capitalize;
+  }
+
+  .title {
+    padding-bottom: 1rem;
+    margin: 0;
+    margin-bottom: 2rem;
+    width: fit-content;
+    border-bottom: 1px solid #fff;
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 2.4rem;
+    font-weight: 300;
+    line-height: 1.7;
+  }
 }
 
-.title {
-  font-size: 5rem;
-  font-weight: 700;
-  color: $headingMainColor;
+.link {
+  text-align: center;
+  text-transform: capitalize;
+  width: 100%;
+  text-decoration: none;
+  font-size: 2.4rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: #fff;
+
+  &:hover {
+    color: $primaryColor;
+  }
 }

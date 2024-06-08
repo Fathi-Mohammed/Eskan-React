@@ -1,33 +1,25 @@
-import React, { useContext, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Image } from '@/shared/components';
 import LocationIcon from '@/assets/images/shapes/location_icon.svg?react';
 import FavIcon from '@/assets/images/shapes/FavIcon.svg?react';
 import type { aqars } from '@/shared/model/home';
-import styles from './styles.module.scss';
 import { useTranslation } from 'react-i18next';
 import { checkFileType } from '@/shared/utils/checkFileType';
 import { Video } from '@/shared/components/Video';
-import { AQARS } from '@/shared/services/api/Api';
-import useMutationData from '@/shared/hooks/useMutationData';
-import AuthContext from '@/shared/context/AuthProvider';
-import { notification } from 'antd';
+import { useAuth } from '@/shared/context/AuthProvider';
+import { toast } from 'react-toastify';
+import styles from './styles.module.scss';
+import useApi from '@/shared/hooks/useApi';
 
 type props = {
   cardData: aqars;
 };
 
-type NotificationType = 'success' | 'info' | 'warning' | 'error';
-
 export const RealEstateCard: React.FC<props> = ({ cardData }) => {
-  const [isLiked, setIsLiked] = React.useState(null);
-  const [api, contextHolder] = notification.useNotification();
+  const [isLiked, setIsLiked] = useState(cardData.is_liked);
   const { t } = useTranslation();
-  const buttonRef = useRef<HTMLButtonElement>(null);
-  const context = useContext<any>(AuthContext);
-  if (!context) throw new Error('AuthProvider not found');
-
-  const { user } = context;
+  const { user } = useAuth();
 
   const {
     id,
@@ -36,56 +28,39 @@ export const RealEstateCard: React.FC<props> = ({ cardData }) => {
     price,
     location: { address },
     image,
-    is_liked,
   } = cardData;
 
-  const { data, mutate } = useMutationData(`${AQARS}/${id}/like`);
+  const { VITE_AQARS } = import.meta.env;
 
-  const openNotificationWithIcon = (
-    type: NotificationType,
-    message: string,
-    description: string,
-  ) => {
-    api[type]({
-      message: message,
-      description: description,
-    });
-  };
+  const { data, mutate, isSuccess } = useApi.post(`${VITE_AQARS}/${id}/like`);
 
   const handleAqarsLike = async () => {
-    try {
-      await mutate();
-      if (user?.access_token && !isLiked) {
-        setIsLiked(data?.data.like);
-        buttonRef.current?.classList.toggle('active');
-        openNotificationWithIcon(
-          'success',
-          'Success',
-          'Item Added To Favorites',
-        );
-      } else if (user?.access_token && isLiked) {
-        setIsLiked(data?.data.like);
-        buttonRef.current?.classList.toggle('active');
-        openNotificationWithIcon(
-          'success',
-          'Success',
-          'Item Removed From Favorites',
-        );
-      } else {
-        openNotificationWithIcon(
-          'error',
-          'Error',
-          'You Have To Sign In First or Activate Your Account',
-        );
+    if (user?.access_token) {
+      try {
+        await mutate();
+      } catch (error) {
+        toast.error('An error occurred while processing your request');
       }
-    } catch (error) {
-      throw new Error(error as string);
+    } else {
+      toast.error('You Have To Sign In First or Activate Your Account');
     }
   };
 
+  useEffect(() => {
+    if (isSuccess) {
+      console.log(data);
+      setIsLiked(data?.data.like);
+
+      if (data?.data.like) {
+        toast.success('You Have Successfully Liked This Aqar');
+      } else {
+        toast.success('This Aqar Removed From Favorites');
+      }
+    }
+  }, [isSuccess, data]);
+
   return (
     <>
-      {contextHolder}
       <div className={styles.realEstateCard}>
         <Link to={`/aqars/${id}`} className={styles.imgWrapper}>
           {checkFileType(image) === 'image' ? (
@@ -105,8 +80,7 @@ export const RealEstateCard: React.FC<props> = ({ cardData }) => {
           </div>
           <button
             onClick={handleAqarsLike}
-            ref={buttonRef}
-            className={`button__ add_to_fav__ ${isLiked || !!is_liked ? 'active' : ''}`}
+            className={`button__ add_to_fav__ ${isLiked ? 'active' : ''}`}
           >
             <FavIcon />
           </button>

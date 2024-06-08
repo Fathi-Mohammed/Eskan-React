@@ -8,6 +8,7 @@ import styles from './styles.module.scss';
 
 import { FirstForm, SecondForm, Submit } from './components';
 import useMutationData from '@/shared/hooks/useMutationData';
+import useApi from '@/shared/hooks/useApi';
 
 export const AddAqar: React.FC = () => {
   const [current, setCurrent] = useState(0);
@@ -64,7 +65,7 @@ export const AddAqar: React.FC = () => {
     },
   });
 
-  const { isLoading, data, isRefetching } = useFetch(ADD_AQAR_FORM);
+  const { isLoading, data, isRefetching } = useApi.get(ADD_AQAR_FORM);
 
   const [hasMoreDetails, setHasMoreDetails] = useState(false);
 

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="148.42" height="162.71" viewBox="0 0 148.42 162.71">
+  <g id="Group_174491" data-name="Group 174491" transform="translate(-611.29 -313.29)">
+    <ellipse id="Ellipse_1151" data-name="Ellipse 1151" cx="69.5" cy="3" rx="69.5" ry="3" transform="translate(616 470)" fill="#efefef" opacity="0.3"/>
+    <g id="vuesax_linear_mouse-circle" data-name="vuesax/linear/mouse-circle" transform="translate(611.29 313.29)">
+      <g id="mouse-circle">
+        <path id="Vector" d="M49.164,29.826l-10.08,3.4a9.309,9.309,0,0,0-5.937,5.937l-3.4,10.08a9.376,9.376,0,0,1-17.872-.186L.432,12.263A9.4,9.4,0,0,1,12.182.451L49.04,11.892C57.7,14.613,57.821,26.919,49.164,29.826Z" transform="translate(80.456 80.5)" fill="none" stroke="#656e72" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"/>
+        <path id="Vector-2" data-name="Vector" d="M123.683,61.842a61.842,61.842,0,1,0-61.842,61.842" transform="translate(12.368 12.368)" fill="none" stroke="#656e72" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"/>
+        <path id="Vector-3" data-name="Vector" d="M0,0H148.42V148.42H0Z" fill="none" opacity="0"/>
+      </g>
+    </g>
+  </g>
+</svg>

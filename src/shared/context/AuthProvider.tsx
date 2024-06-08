@@ -67,9 +67,13 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       path: '/',
       expires: new Date('9999-12-31T23:59:59.999Z'),
     });
-    setUser(userData);
+    setUser((prev) => {
+      if (prev) {
+        return { ...prev, ...userData };
+      }
+      return userData;
+    });
   };
-
   return (
     <AuthContext.Provider value={{ user, loading, login, logout, updateUser }}>
       {children}

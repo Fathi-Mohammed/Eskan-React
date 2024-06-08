@@ -505,4 +505,10 @@
       background-color: rgba($redColor, 0.3);
     }
   }
+
+  &.deleteModalBtn {
+    font-weight: 700;
+    font-size: 1.8rem;
+    height: 4.8rem;
+  }
 }

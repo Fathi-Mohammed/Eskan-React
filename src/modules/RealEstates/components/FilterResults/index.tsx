@@ -16,11 +16,12 @@ export const FilterResults: React.FC<props> = ({ cardData, isLoading }) => {
             <RealEstateLoadingCard />
           </Col>
         ))}
-      {cardData?.map((item) => (
-        <Col key={item.id} xs={12} sm={6} md={4} lg={3}>
-          <RealEstateCard cardData={item} />
-        </Col>
-      ))}
+      {!isLoading &&
+        cardData?.map((item) => (
+          <Col key={item.id} xs={12} sm={6} md={4} lg={3}>
+            <RealEstateCard cardData={item} />
+          </Col>
+        ))}
     </Row>
   );
 };

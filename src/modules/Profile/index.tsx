@@ -44,7 +44,7 @@ export const Profile: React.FC = () => {
     isSuccess: isMutationSuccess,
   } = useApi.post('profile/edit', formData, {
     headers: {
-      // 'Content-Type': 'multipart/form-data',
+      'Content-Type': 'multipart/form-data',
     },
   });
 
@@ -66,7 +66,6 @@ export const Profile: React.FC = () => {
   useEffect(() => {
     if (isMutationSuccess) {
       updateUser(userData.data);
-      console.log(userData);
     }
   }, [isMutationSuccess]);
 
