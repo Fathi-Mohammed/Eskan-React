@@ -1,0 +1,6 @@
+.notificationSwitch {
+  background: $greyColor !important;
+  &.ant-switch-checked {
+    background: $greenColor !important;
+  }
+}

@@ -1,4 +1,3 @@
-import { RealEstateCard, RealEstateLoadingCard } from '@/shared/components';
 import useApi from '@/shared/hooks/useApi';
 import { Pagination } from 'antd';
 import React, { useState } from 'react';

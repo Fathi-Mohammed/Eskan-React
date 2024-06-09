@@ -14,6 +14,7 @@ interface User {
   mobile: string;
   email: string;
   rate: number;
+  notifiable: boolean;
   id: number;
   created_at: string;
   updated_at: string;
@@ -62,16 +63,16 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   };
 
   const updateUser = (userData: User) => {
-    const data = JSON.stringify(userData);
-    setCookie('auth_token', data, {
-      path: '/',
-      expires: new Date('9999-12-31T23:59:59.999Z'),
-    });
     setUser((prev) => {
       if (prev) {
         return { ...prev, ...userData };
       }
       return userData;
+    });
+    const data = JSON.stringify(user);
+    setCookie('auth_token', data, {
+      path: '/',
+      expires: new Date('9999-12-31T23:59:59.999Z'),
     });
   };
   return (

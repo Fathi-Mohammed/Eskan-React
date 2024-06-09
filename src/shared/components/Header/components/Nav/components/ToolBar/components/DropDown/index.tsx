@@ -19,7 +19,7 @@ export const DropDown: React.FC = () => {
 
   const navigate = useNavigate();
 
-  const { mutate, data } = useMutationData('logout');
+  const { mutate } = useMutationData('logout');
 
   const handleLogout = async () => {
     logout();

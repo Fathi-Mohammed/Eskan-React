@@ -1,0 +1,26 @@
+@import '@/theme/shared.scss';
+
+.switchWrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.switchContent {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.title {
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.parag {
+  color: #8f8f8f;
+  font-size: 1.4rem;
+  font-weight: 400;
+}

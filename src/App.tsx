@@ -10,6 +10,10 @@ import {
   AddAqar,
   Profile,
   MyAqars,
+  Membership,
+  Notifications,
+  Favorites,
+  Chat,
 } from './modules';
 import { Route, Routes } from 'react-router-dom';
 import useLocalizeDocumentAttributes from '@/shared/hooks/useLocalizeDocumentAttributes';
@@ -54,6 +58,10 @@ export default function App() {
           <Route path="/add-aqar" element={<AddAqar />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/my-aqars" element={<MyAqars />} />
+          <Route path="/membership" element={<Membership />} />
+          <Route path="/notifications" element={<Notifications />} />
+          <Route path="/favorites" element={<Favorites />} />
+          <Route path="/chat" element={<Chat />} />
         </Route>
       </Routes>
       <Footer data={data?.data} />

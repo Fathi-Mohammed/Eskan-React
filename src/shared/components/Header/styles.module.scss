@@ -46,7 +46,7 @@
   display: block;
   z-index: 1;
   flex-basis: content;
-  margin-inline-end: 104px;
+  margin-inline-end: 10.4rem;
 
   @include md {
     margin-inline-end: 40px;
@@ -64,6 +64,10 @@
   img {
     width: 100%;
     object-fit: contain;
+  }
+
+  &.logguserLogoedInLogo {
+    margin-inline-end: 4rem !important;
   }
 }
 

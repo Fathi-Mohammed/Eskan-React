@@ -16,10 +16,14 @@
   }
 }
 
+.userLogoedIn {
+  gap: 1rem;
+}
+
 .listItem {
   @include sm {
     width: 100%;
-    
+
     &.langButtonItem {
       position: absolute;
       top: 20px;
@@ -67,7 +71,7 @@
   @include sm {
     width: 50%;
     border-radius: 0;
-    border-color: rgba(#fff ,0.2);
+    border-color: rgba(#fff, 0.2);
     color: #fff !important;
     font-size: 1.6rem;
   }
@@ -108,4 +112,10 @@
 .langButton {
   font-size: 1.7rem;
   transition: all 0.5s;
+  padding: 1rem;
+
+  svg {
+    width: 5rem !important;
+    height: 5rem !important;
+  }
 }

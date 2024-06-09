@@ -14,9 +14,10 @@ import useApi from '@/shared/hooks/useApi';
 
 type props = {
   cardData: aqars;
+  refetch?: () => void;
 };
 
-export const RealEstateCard: React.FC<props> = ({ cardData }) => {
+export const RealEstateCard: React.FC<props> = ({ cardData, refetch }) => {
   const [isLiked, setIsLiked] = useState(cardData.is_liked);
   const { t } = useTranslation();
   const { user } = useAuth();
@@ -48,8 +49,8 @@ export const RealEstateCard: React.FC<props> = ({ cardData }) => {
 
   useEffect(() => {
     if (isSuccess) {
-      console.log(data);
       setIsLiked(data?.data.like);
+      if (refetch) refetch();
 
       if (data?.data.like) {
         toast.success('You Have Successfully Liked This Aqar');

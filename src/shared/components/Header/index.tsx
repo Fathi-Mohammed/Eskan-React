@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import styles from './styles.module.scss';
 import { useHeaderState } from './hooks/useHeaderState';
 import { useScrollEffect } from './hooks/useScrollEffect';
+import { useAuth } from '@/shared/context/AuthProvider';
 
 type props = {
   data?: any;
@@ -15,12 +16,16 @@ export const Header: React.FC<props> = ({ data }) => {
   const { isNavOpen, handleNavToggle, headerHeight, headerRef } =
     useHeaderState();
   const { FixedHeaderRef } = useScrollEffect(headerHeight);
+  const { user } = useAuth();
   return (
     <header ref={headerRef} className={styles.header}>
       <div ref={FixedHeaderRef} className={styles.headerContentWrapper}>
         <Container>
           <div className={styles.headerContent}>
-            <Link to="/" className={styles.logo}>
+            <Link
+              to="/"
+              className={`${styles.logo} ${user?.access_token && styles.logguserLogoedInLogo}`}
+            >
               <figure>
                 <img src={data.logo} alt="logo" />
               </figure>

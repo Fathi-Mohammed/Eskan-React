@@ -20,7 +20,7 @@
     padding-top: 13rem;
     transition: 0.5s;
     flex-wrap: nowrap;
-    overflow-x: scroll;
+    overflow-x: hidden;
   }
 }
 
@@ -44,6 +44,10 @@
   }
 }
 
+.userLogoedIn {
+  gap: 2rem;
+}
+
 .closeButton {
   display: none;
 
@@ -59,20 +63,20 @@
     padding: 0;
     top: 20px;
     left: 30px;
-  
+
     &:hover,
     &:focus {
       outline: none;
     }
-  
+
     @include dir {
       right: 30px;
       left: unset;
     }
-  
+
     &::after,
     &::before {
-      content: "";
+      content: '';
       display: block;
       width: 2px;
       height: 25px;
@@ -83,10 +87,9 @@
       transform: rotate(-45deg);
       transition: 0.2s;
     }
-  
+
     &::before {
       transform: rotate(45deg);
     }
-  
   }
 }

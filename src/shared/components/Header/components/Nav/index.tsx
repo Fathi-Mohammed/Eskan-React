@@ -1,3 +1,4 @@
+import { useAuth } from '@/shared/context/AuthProvider';
 import { NavLinks } from './components/NavLinks';
 import { ToolBar } from './components/ToolBar';
 import styles from './styles.module.scss';
@@ -7,9 +8,12 @@ interface navProps {
   onClick: () => void;
   isNavOpen: boolean;
 }
-export const Nav = ({ onClick, isNavOpen } : navProps) => {
+export const Nav = ({ onClick, isNavOpen }: navProps) => {
+  const { user } = useAuth();
   return (
-    <nav className={`${styles.nav} ${isNavOpen ? styles.open : ''}`}>
+    <nav
+      className={`${styles.nav}  ${user?.access_token ? styles.userLogoedIn : ''} ${isNavOpen ? styles.open : ''}`}
+    >
       <figure className={styles.logo}>
         <img src={Logo} alt="logo" />
       </figure>

@@ -7,6 +7,9 @@ import { useLanguage } from '@/shared/hooks/useLanguage';
 import SearchIcon from '@/assets/images/shapes/header_shapes/header_search_icon.svg?react';
 import AddIcon from '@/assets/images/shapes/header_shapes/header_add_icon.svg?react';
 import ProfileIcon from '@/assets/images/shapes/header_shapes/header_profile_icon.svg?react';
+import NotificationIcon from '@/assets/images/shapes/notification_icon.svg?react';
+import FavIcon from '@/assets/images/shapes/header_shapes/FavIcon.svg?react';
+import ChatIcon from '@/assets/images/shapes/header_shapes/Chat.svg?react';
 
 import styles from './styles.module.scss';
 import { DropDown } from './components';
@@ -27,7 +30,9 @@ export const ToolBar = ({ onClick }: props) => {
     onClick();
   };
   return (
-    <ul className={styles.toolBar}>
+    <ul
+      className={`${styles.toolBar} ${context.user ? styles.userLogoedIn : ''}`}
+    >
       <li className={styles.listItem}>
         <div className={styles.searchWrapper}>
           <SearchIcon />
@@ -44,14 +49,40 @@ export const ToolBar = ({ onClick }: props) => {
         </Link>
       </li>
       {context.user ? (
-        <li className={`${styles.listItem} ${styles.profileButtonItem}`}>
-          <DropDown />
-        </li>
+        <>
+          <li className={`${styles.listItem} ${styles.profileButtonItem}`}>
+            <Link
+              to="/notifications"
+              className="button__ secondary__ outline__ full_rounded__ circle__ headerLinks"
+            >
+              <NotificationIcon />
+            </Link>
+          </li>
+          <li className={`${styles.listItem} ${styles.profileButtonItem}`}>
+            <Link
+              to="/favorites"
+              className="button__ secondary__ outline__ full_rounded__ circle__ headerLinks"
+            >
+              <FavIcon />
+            </Link>
+          </li>
+          <li className={`${styles.listItem} ${styles.profileButtonItem}`}>
+            <Link
+              to="/chat"
+              className="button__ secondary__ outline__ full_rounded__ circle__ headerLinks"
+            >
+              <ChatIcon />
+            </Link>
+          </li>
+          <li className={`${styles.listItem} ${styles.profileButtonItem}`}>
+            <DropDown />
+          </li>
+        </>
       ) : (
         <li className={`${styles.listItem} ${styles.profileButtonItem}`}>
           <Link
             to="/auth/sign-in"
-            className="button__ secondary__ outline__ full_rounded__ circle__"
+            className="button__ secondary__ outline__ full_rounded__ circle__ headerLinks"
           >
             <ProfileIcon />
           </Link>
@@ -59,7 +90,7 @@ export const ToolBar = ({ onClick }: props) => {
       )}
       <li className={`${styles.listItem} ${styles.langButtonItem}`}>
         <button
-          className={`button__ secondary__ outline__ circle__ ${styles.langButton}`}
+          className={`button__ secondary__ outline__ circle__ headerLinks ${styles.langButton}`}
           onClick={handleLangButtonClick}
         >
           <AiOutlineGlobal />

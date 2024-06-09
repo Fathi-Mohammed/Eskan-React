@@ -8,3 +8,7 @@ export { OwnerRates } from './OwnerRates';
 export { AddAqar } from './AddAqar';
 export { Profile } from './Profile';
 export { MyAqars } from './MyAqars';
+export { Membership } from './Membership';
+export { Notifications } from './Notifications';
+export { Favorites } from './Favorites';
+export { Chat } from './Chat';
