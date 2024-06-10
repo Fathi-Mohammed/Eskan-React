@@ -53,7 +53,7 @@ export const Submit: React.FC<props> = ({
       </label>
       <button
         type="button"
-        className="button__ primary__ fixed_size__ secondary_rounded__"
+        className="button primary__ fixed_size__ secondary_rounded__"
         onClick={handleSubmit}
       >
         إضافة

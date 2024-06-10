@@ -3,7 +3,7 @@ import { NoData, NotificationCard, Switch } from './components';
 import { Container } from 'react-bootstrap';
 import useApi from '@/shared/hooks/useApi';
 
-export const Notifications: React.FC = () => {
+const Notifications: React.FC = () => {
   const { VITE_NOTIFICATIONS } = import.meta.env;
   const { data, isLoading } = useApi.get(VITE_NOTIFICATIONS);
   return (
@@ -25,3 +25,5 @@ export const Notifications: React.FC = () => {
     </main>
   );
 };
+
+export default Notifications;

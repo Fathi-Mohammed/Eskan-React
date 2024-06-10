@@ -11,7 +11,7 @@ type rate = {
   rate: number;
 };
 
-export const OwnerRates = () => {
+const OwnerRates = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [rateData, setRateData] = useState<rate>({
     comment: '',
@@ -78,3 +78,5 @@ export const OwnerRates = () => {
     </main>
   );
 };
+
+export default OwnerRates;

@@ -1,4 +1,4 @@
-.button__ {
+.button {
   cursor: pointer;
   background-color: transparent;
   border: 1px solid transparent;
@@ -334,7 +334,7 @@
     }
   }
 
-  &.second_color_button__ {
+  &.second_color_button {
     width: 168px;
     height: 46px;
     background-color: $secondaryColor;
@@ -357,7 +357,7 @@
     }
   }
 
-  &.header_add_button__ {
+  &.header_add_button {
     color: $primaryColor;
     height: 4.8rem;
   }
@@ -388,7 +388,7 @@
     }
   }
 
-  &.comment_button__ {
+  &.comment_button {
     width: 50px;
     height: 50px;
     background-color: rgba(#fff, 0.13);
@@ -406,7 +406,7 @@
     }
   }
 
-  &.add_rating_button__ {
+  &.add_rating_button {
     background-color: rgba(#fff, 0.13);
     padding: 2rem 3.5rem;
     border-radius: $mainBorderRadius;
@@ -429,7 +429,7 @@
     }
   }
 
-  &.chat_delete__ {
+  &.chatDelete {
     background-color: #462735;
     border: 2px solid transparent;
     border-radius: $mainBorderRadius;
@@ -481,7 +481,7 @@
     }
   }
 
-  &.edit_button__ {
+  &.edit_button {
     color: $secondaryColor;
     background-color: $primaryColor;
     width: 100%;
@@ -494,7 +494,7 @@
     }
   }
 
-  &.delete_button__ {
+  &.delete_button {
     background-color: rgba($redColor, 0.17);
     width: 48px;
     height: 48px;
@@ -510,5 +510,13 @@
     font-weight: 700;
     font-size: 1.8rem;
     height: 4.8rem;
+  }
+
+  &.sendButton {
+    width: 5rem;
+    height: 5rem;
+    flex-shrink: 0;
+    border-radius: $mainBorderRadius;
+    background-color: rgba(#fff, 0.15);
   }
 }

@@ -49,7 +49,7 @@ export const AqarsInfo: React.FC<props> = ({ data, handleFav }) => {
           </div>
           <button
             onClick={handleFav}
-            className={`button__ add_to_fav__ ${is_liked ? 'active' : 'not-active'}`}
+            className={`button add_to_fav__ ${is_liked ? 'active' : 'not-active'}`}
           >
             <FavIcon />
           </button>

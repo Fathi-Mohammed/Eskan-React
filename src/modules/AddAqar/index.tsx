@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Steps } from 'antd';
 import { Container } from 'react-bootstrap';
-import useFetch from '@/shared/hooks/useApi';
 import { ADD_AQAR_FORM } from '@/shared/services/api/Api';
 import { Loader } from '@/shared/components/Loader';
 import styles from './styles.module.scss';
@@ -10,7 +9,7 @@ import { FirstForm, SecondForm, Submit } from './components';
 import useMutationData from '@/shared/hooks/useMutationData';
 import useApi from '@/shared/hooks/useApi';
 
-export const AddAqar: React.FC = () => {
+const AddAqar: React.FC = () => {
   const [current, setCurrent] = useState(0);
   const [formData, setFormData] = useState<any>({
     files: [],
@@ -128,7 +127,7 @@ export const AddAqar: React.FC = () => {
                   {hasMoreDetails ? (
                     <button
                       type="button"
-                      className="button__ primary__ fixed_size__ secondary_rounded__ margin_start_auto__ mt-5"
+                      className="button primary__ fixed_size__ secondary_rounded__ margin_start_auto__ mt-5"
                       onClick={handleNext}
                     >
                       التالي
@@ -151,7 +150,7 @@ export const AddAqar: React.FC = () => {
                   />
                   <button
                     type="button"
-                    className="button__ grey__ fixed_size__ secondary_rounded__ margin_start_auto__"
+                    className="button grey__ fixed_size__ secondary_rounded__ margin_start_auto__"
                     onClick={handlePrev}
                   >
                     السابق
@@ -165,3 +164,5 @@ export const AddAqar: React.FC = () => {
     </main>
   );
 };
+
+export default AddAqar;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 
-export const Membership: React.FC = () => {
+const Membership: React.FC = () => {
   return (
     <main className="default_page">
       <Container>
@@ -12,3 +12,5 @@ export const Membership: React.FC = () => {
     </main>
   );
 };
+
+export default Membership;

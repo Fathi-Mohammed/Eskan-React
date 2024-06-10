@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate, Outlet } from 'react-router-dom';
 import styles from './styles.module.scss';
 
-export const ProtectedRoute: React.FC = () => {
+export const PrivateRoute: React.FC = () => {
   const navigate = useNavigate();
   const { user } = useAuth();
   const [countdown, setCountdown] = useState(3);

@@ -2,7 +2,8 @@ import { useTranslation } from 'react-i18next';
 import { Container } from 'react-bootstrap';
 import styles from './styles.module.scss';
 import { tabTitle } from '@/shared/utils/tabTitle';
-export const ContactUs = () => {
+
+const ContactUs = () => {
   const { t } = useTranslation();
 
   tabTitle(t('ContactUs'));
@@ -38,3 +39,5 @@ export const ContactUs = () => {
     </main>
   );
 };
+
+export default ContactUs;

@@ -3,7 +3,7 @@ import { tabTitle } from '@/shared/utils/tabTitle';
 import useApi from '@/shared/hooks/useApi';
 import { FetchingError } from '@/shared/components';
 
-export const Home = () => {
+const Home = () => {
   tabTitle('pages.home');
 
   const { VITE_HOME } = import.meta.env;
@@ -23,3 +23,5 @@ export const Home = () => {
     </>
   );
 };
+
+export default Home;

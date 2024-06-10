@@ -9,7 +9,7 @@ type props = {
   error?: string;
 };
 
-export const NotFound: React.FC<props> = ({ error }) => {
+const NotFound: React.FC<props> = ({ error }) => {
   console.error(error);
   return (
     <main className="default_page">
@@ -26,3 +26,5 @@ export const NotFound: React.FC<props> = ({ error }) => {
     </main>
   );
 };
+
+export default NotFound;

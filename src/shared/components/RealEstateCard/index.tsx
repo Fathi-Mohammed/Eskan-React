@@ -81,7 +81,7 @@ export const RealEstateCard: React.FC<props> = ({ cardData, refetch }) => {
           </div>
           <button
             onClick={handleAqarsLike}
-            className={`button__ add_to_fav__ ${isLiked ? 'active' : ''}`}
+            className={`button add_to_fav__ ${isLiked ? 'active' : ''}`}
           >
             <FavIcon />
           </button>

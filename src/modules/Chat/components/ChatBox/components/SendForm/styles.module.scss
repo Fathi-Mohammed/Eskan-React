@@ -1,0 +1,109 @@
+@import '@/theme/shared.scss';
+
+.formWrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  background-color: #3f4b4f;
+  border-radius: $mainBorderRadius;
+  height: 6.6rem;
+  padding: 0 3rem 0 1.5rem;
+  border: 1px solid transparent;
+  align-self: flex-end;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+
+  &:focus-within {
+    border-color: $primaryColor;
+  }
+}
+
+.input {
+  width: 100%;
+  background-color: transparent !important;
+  border: none !important;
+  outline: none !important;
+  font-size: 1.6rem;
+  box-shadow: unset !important;
+  color: #fff !important;
+
+  &::placeholder {
+    color: $primaryColor;
+    opacity: 1;
+    transition: 0.5s;
+  }
+
+  &:focus {
+    &::placeholder {
+      opacity: 0;
+    }
+  }
+}
+
+.upload {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  cursor: pointer;
+}
+
+input[type='file'] {
+  display: none;
+}
+
+.uploadWrapper {
+  position: relative;
+  z-index: 1;
+  display: block;
+  background-color: rgba($primaryColor, 0.2);
+  padding: 1rem 2rem;
+  padding-bottom: 4rem;
+  border-radius: $mainBorderRadius $mainBorderRadius 0 0;
+  margin-bottom: -3rem;
+}
+
+.uploadedFile {
+  display: flex;
+  align-items: center;
+  position: relative;
+  gap: 1rem;
+  color: #fff;
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  width: 100%;
+
+  svg {
+    font-size: 2.5rem;
+  }
+
+  button {
+    background-color: transparent;
+    border: none;
+    color: $redColor;
+    font-size: 1.4rem;
+    cursor: pointer !important;
+    position: absolute;
+    top: 50%;
+    inset-inline-end: 1.5rem;
+    transform: translateY(-50%);
+    z-index: 10;
+    margin-inline-start: auto;
+  }
+}
+
+.loading {
+  animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

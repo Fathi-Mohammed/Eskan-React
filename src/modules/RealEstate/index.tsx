@@ -6,7 +6,7 @@ import { AqarsInfo, Comments, Related } from './components';
 import useMutationData from '@/shared/hooks/useMutationData';
 import useApi from '@/shared/hooks/useApi';
 
-export const RealEstate: React.FC = () => {
+const RealEstate: React.FC = () => {
   const param = useParams();
 
   const { data, refetch } = useApi.get(AQARS + `/${param.id}`);
@@ -38,3 +38,5 @@ export const RealEstate: React.FC = () => {
     </main>
   );
 };
+
+export default RealEstate;

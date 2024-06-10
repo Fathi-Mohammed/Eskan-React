@@ -61,7 +61,7 @@ export const MyAqarCard: React.FC<props> = ({ data, refetch }) => {
         </Link>
         <button
           onClick={showModal}
-          className={`button__ red__ main_rounded__ ${styles.deleteBtn}`}
+          className={`button red__ main_rounded__ ${styles.deleteBtn}`}
         >
           <DeleteIcon />
         </button>

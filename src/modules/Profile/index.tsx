@@ -13,7 +13,7 @@ type formData = {
   image?: any;
 };
 
-export const Profile: React.FC = () => {
+const Profile: React.FC = () => {
   const [formData, setFormData] = useState<formData>({
     name: '',
   });
@@ -104,7 +104,7 @@ export const Profile: React.FC = () => {
             readOnly
           />
           <button
-            className="button__ primary__ full_width main_rounded__"
+            className="button primary__ full_width main_rounded__"
             onClick={handleSubmit}
           >
             حفظ التعديلات
@@ -120,3 +120,5 @@ export const Profile: React.FC = () => {
     </main>
   );
 };
+
+export default Profile;

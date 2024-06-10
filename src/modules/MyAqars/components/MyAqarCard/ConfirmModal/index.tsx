@@ -53,7 +53,7 @@ export const ConfirmModal: React.FC<props> = ({
       <p className={styles.parag}>هل أنت متأكد من حذف هذا الإعلان ؟</p>
       <button
         onClick={handleDelete}
-        className="button__ red__ main_rounded__ full_width deleteModalBtn"
+        className="button red__ main_rounded__ full_width deleteModalBtn"
       >
         حذف
       </button>

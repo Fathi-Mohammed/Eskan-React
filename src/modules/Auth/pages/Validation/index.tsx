@@ -33,6 +33,7 @@ export const Validation = () => {
   );
 
   const handleSubmit = async (e) => {
+    console.log(isSetPassword ? RESET_CODE : ACTIVATE);
     e.preventDefault();
     await mutateAsync();
     if (isSuccess) {

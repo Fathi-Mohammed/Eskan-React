@@ -5,7 +5,7 @@ import useApi from '@/shared/hooks/useApi';
 import { RealEstateCard, RealEstateLoadingCard } from '@/shared/components';
 import { Pagination } from 'antd';
 
-export const Favorites = () => {
+const Favorites = () => {
   const [page, setPage] = useState(1);
 
   const { VITE_FAVORITES } = import.meta.env;
@@ -51,3 +51,5 @@ export const Favorites = () => {
     </main>
   );
 };
+
+export default Favorites;

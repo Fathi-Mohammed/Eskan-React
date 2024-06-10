@@ -51,7 +51,7 @@ export const DropDown: React.FC = () => {
       key: '4',
       icon: <LogOutIcon />,
       label: (
-        <button className="button__" onClick={handleLogout}>
+        <button className="button" onClick={handleLogout}>
           تسجيل الخروج
         </button>
       ),
@@ -61,7 +61,7 @@ export const DropDown: React.FC = () => {
   return (
     <Dropdown placement="bottom" className="54545" menu={{ items }}>
       <div
-        className={`button__ secondary__ outline__ full_rounded__ circle__ ${styles.userIcon}`}
+        className={`button secondary__ outline__ full_rounded__ circle__ ${styles.userIcon}`}
       >
         <Image src={user?.image || ''} asp={100} alt="profile" />
       </div>

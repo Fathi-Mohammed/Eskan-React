@@ -9,6 +9,7 @@ import styles from './styles.module.scss';
 
 type props = {
   data: {
+    id: number;
     name: string;
     image: string;
     mobile: string;
@@ -47,7 +48,11 @@ export const UserInfo: React.FC<props> = ({ data, showPhone }) => {
             <PhoneIcon />
           </Link>
         )}
-        <Link to="/chat" className="link lessor_link lessor_chat__">
+        <Link
+          to="/chat"
+          state={{ userData: data }}
+          className="link lessor_link lessor_chat__"
+        >
           <ChatIcon />
         </Link>
       </div>

@@ -30,7 +30,7 @@ export const Form: React.FC<props> = ({
           onChange={(e) => setComment(e.target.value)}
           value={comment}
         />
-        <button className={`button__ ${styles.button}`}>
+        <button className={`button ${styles.button}`}>
           <SendIcon />
         </button>
       </form>

@@ -30,7 +30,7 @@ export const UserInfo: React.FC<props> = ({ data, setIsModalOpen }) => {
       </div>
       <button
         onClick={() => setIsModalOpen(true)}
-        className="button__ add_rating_button__"
+        className="button add_rating_button"
       >
         <RatingIcon />
         قم بتقييم المعلن

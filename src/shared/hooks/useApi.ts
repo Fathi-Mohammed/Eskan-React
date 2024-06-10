@@ -1,4 +1,8 @@
-import { useQuery, useMutation } from '@tanstack/react-query';
+import {
+  useQuery,
+  useMutation,
+  UseMutationResult,
+} from '@tanstack/react-query';
 import { Axios } from '../services/Axios';
 import { AxiosRequestConfig } from 'axios';
 

@@ -6,7 +6,7 @@ import { buildQueryString } from '../RealEstates/utils/buildQueryString';
 import { MyAqarCard } from './components';
 import { NoData } from './components/NoData';
 
-export const MyAqars: React.FC = () => {
+const MyAqars: React.FC = () => {
   const [filterData, setFilterData] = useState({
     page: 1,
   });
@@ -52,3 +52,5 @@ export const MyAqars: React.FC = () => {
     </main>
   );
 };
+
+export default MyAqars;

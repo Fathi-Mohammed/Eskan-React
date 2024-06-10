@@ -42,7 +42,7 @@ export const ToolBar = ({ onClick }: props) => {
       <li className={styles.listItem}>
         <Link
           to="/add-aqar"
-          className="button__ secondary__ main_rounded__ fixed_size__ full_width_sm header_add_button__"
+          className="button secondary__ main_rounded__ fixed_size__ full_width_sm header_add_button"
         >
           <AddIcon />
           {t('header.addAd')}
@@ -53,7 +53,7 @@ export const ToolBar = ({ onClick }: props) => {
           <li className={`${styles.listItem} ${styles.profileButtonItem}`}>
             <Link
               to="/notifications"
-              className="button__ secondary__ outline__ full_rounded__ circle__ headerLinks"
+              className="button secondary__ outline__ full_rounded__ circle__ headerLinks"
             >
               <NotificationIcon />
             </Link>
@@ -61,7 +61,7 @@ export const ToolBar = ({ onClick }: props) => {
           <li className={`${styles.listItem} ${styles.profileButtonItem}`}>
             <Link
               to="/favorites"
-              className="button__ secondary__ outline__ full_rounded__ circle__ headerLinks"
+              className="button secondary__ outline__ full_rounded__ circle__ headerLinks"
             >
               <FavIcon />
             </Link>
@@ -69,7 +69,7 @@ export const ToolBar = ({ onClick }: props) => {
           <li className={`${styles.listItem} ${styles.profileButtonItem}`}>
             <Link
               to="/chat"
-              className="button__ secondary__ outline__ full_rounded__ circle__ headerLinks"
+              className="button secondary__ outline__ full_rounded__ circle__ headerLinks"
             >
               <ChatIcon />
             </Link>
@@ -82,7 +82,7 @@ export const ToolBar = ({ onClick }: props) => {
         <li className={`${styles.listItem} ${styles.profileButtonItem}`}>
           <Link
             to="/auth/sign-in"
-            className="button__ secondary__ outline__ full_rounded__ circle__ headerLinks"
+            className="button secondary__ outline__ full_rounded__ circle__ headerLinks"
           >
             <ProfileIcon />
           </Link>
@@ -90,7 +90,7 @@ export const ToolBar = ({ onClick }: props) => {
       )}
       <li className={`${styles.listItem} ${styles.langButtonItem}`}>
         <button
-          className={`button__ secondary__ outline__ circle__ headerLinks ${styles.langButton}`}
+          className={`button secondary__ outline__ circle__ headerLinks ${styles.langButton}`}
           onClick={handleLangButtonClick}
         >
           <AiOutlineGlobal />

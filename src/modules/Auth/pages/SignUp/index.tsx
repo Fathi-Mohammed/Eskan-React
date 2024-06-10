@@ -49,7 +49,9 @@ export const SignUp = () => {
 
       window.localStorage.setItem('last_session', 'signUp');
 
-      navigate('/auth/validation');
+      navigate('/auth/validation', {
+        state: { mobile: formData.mobile, session: 'signUp' },
+      });
     }
 
     if (isError) {
@@ -138,7 +140,7 @@ export const SignUp = () => {
                   !formData.confirmPassword ||
                   isPending
                 }
-                className={`button__ primary__ full_width main_rounded__ ${styles.link}`}
+                className={`button primary__ full_width main_rounded__ ${styles.link}`}
               >
                 {t('auth.signUp')}
                 {isPending && <Spinner animation="border" size="sm" />}

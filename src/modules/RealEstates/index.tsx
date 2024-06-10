@@ -6,7 +6,7 @@ import { Pagination, message } from 'antd';
 import { buildQueryString } from './utils/buildQueryString';
 import useApi from '@/shared/hooks/useApi';
 
-export const RealEstates: React.FC = () => {
+const RealEstates: React.FC = () => {
   const [filterData, setFilterData] = useState({
     purpose: '',
     for: '',
@@ -65,3 +65,5 @@ export const RealEstates: React.FC = () => {
     </main>
   );
 };
+
+export default RealEstates;

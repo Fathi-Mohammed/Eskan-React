@@ -42,7 +42,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   useEffect(() => {
     const token = getCookie('auth_token');
     if (token) {
-      setUser(JSON.parse(token)); // Assuming token is a JSON stringified user object
+      setUser(JSON.parse(token));
     }
     setLoading(false);
   }, []);

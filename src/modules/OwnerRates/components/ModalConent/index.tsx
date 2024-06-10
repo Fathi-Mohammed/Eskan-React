@@ -60,7 +60,7 @@ export const ModalConent: React.FC<props> = ({
         <button
           type="submit"
           disabled={loading}
-          className="button__ primary__ full_width main_rounded__ submit_rate__btn"
+          className="button primary__ full_width main_rounded__ submit_rate__btn"
         >
           {t('send')}
           {loading && <Spinner animation="border" />}
