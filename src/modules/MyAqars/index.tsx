@@ -23,7 +23,7 @@ const MyAqars: React.FC = () => {
   if (isLoading) return <h1>Loading</h1>;
 
   return (
-    <main className="default_page">
+    <main className="defaultPage">
       <Container>
         <div className="section_head_wrapper">
           <h2 className="section_main_title__">اعلاناتي</h2>

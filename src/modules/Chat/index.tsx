@@ -25,7 +25,7 @@ const Chat: React.FC = () => {
   if (isLoading) return <h1>Loading ...</h1>;
 
   return (
-    <main className="default_page">
+    <main className="defaultPage">
       <Container>
         <div className="page_head_wrapper">
           <h1 className="page_main_title__">الرسائل</h1>

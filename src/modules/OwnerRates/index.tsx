@@ -46,7 +46,7 @@ const OwnerRates = () => {
   }, [mutation?.isSuccess]);
 
   return (
-    <main className="default_page">
+    <main className="defaultPage">
       <Container>
         <div className="page_head_wrapper flex_display justify_content_between">
           <div>

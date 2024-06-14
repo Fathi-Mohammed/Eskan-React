@@ -11,7 +11,7 @@ type props = {
 export const FetchingError: React.FC<props> = ({ error }) => {
   console.error(error);
   return (
-    <main className="default_page">
+    <main className="defaultPage">
       <Container>
         <div className={styles.wrapper}>
           <NotFound />

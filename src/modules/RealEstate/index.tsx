@@ -29,7 +29,7 @@ const RealEstate: React.FC = () => {
   }, [isLike]);
 
   return (
-    <main className="default_page">
+    <main className="defaultPage">
       <Container>
         <AqarsInfo data={details} handleFav={handleAqarsLike} />
         <Comments data={comments} />

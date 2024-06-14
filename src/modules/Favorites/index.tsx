@@ -17,7 +17,7 @@ const Favorites = () => {
   const { data, pagination } = favData || {};
   const { total, currentPage, perPage } = pagination || {};
   return (
-    <main className="default_page">
+    <main className="defaultPage">
       <Container>
         <div className="page_head_wrapper">
           <h1 className="page_main_title__">المفضلة</h1>

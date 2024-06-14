@@ -73,7 +73,7 @@ const Profile: React.FC = () => {
   if (isLoading) return <Loader visible={isLoading} />;
 
   return (
-    <main className="default_page defaultForm">
+    <main className="defaultPage defaultForm">
       <Container>
         <div className={styles.formWrapper}>
           <label htmlFor="image" className={styles.profileImageWrapper}>

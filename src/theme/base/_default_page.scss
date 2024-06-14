@@ -1,4 +1,4 @@
-.default_page {
+.defaultPage {
   min-height: 50vh;
   padding-top: 100px;
   padding-bottom: 100px;
@@ -52,7 +52,7 @@
 
   &.with_margin_bottom__ {
     margin-bottom: 30px;
-  } 
+  }
 
   &.large_row_gap {
     row-gap: 90px !important;
@@ -81,7 +81,7 @@
   }
 
   &.with_border_bottom__ {
-    border-bottom: 1px solid rgba(#fff , 0.1);
+    border-bottom: 1px solid rgba(#fff, 0.1);
     padding-bottom: 3rem;
   }
 

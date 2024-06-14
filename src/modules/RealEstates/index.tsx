@@ -42,7 +42,7 @@ const RealEstates: React.FC = () => {
   if (isError) message.error(error.message);
 
   return (
-    <main className={`${styles.realEstates} default_page`}>
+    <main className={`${styles.realEstates} defaultPage`}>
       <Container>
         <div className="section_head_wrapper">
           <h2 className="section_main_title__">الإعلانات</h2>

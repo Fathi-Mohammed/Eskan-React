@@ -109,7 +109,7 @@ const AddAqar: React.FC = () => {
   const items = steps.map((item) => ({ key: item.title, title: item.title }));
 
   return (
-    <main className="default_page">
+    <main className="defaultPage">
       <Container>
         <div className="section_head_wrapper">
           <h2 className="section_main_title__">إضافة إعلان جديد</h2>

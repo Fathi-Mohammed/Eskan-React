@@ -9,7 +9,7 @@ const ContactUs = () => {
   tabTitle(t('ContactUs'));
 
   return (
-    <main className={`${styles.contactUsSection} default_page `}>
+    <main className={`${styles.contactUsSection} defaultPage `}>
       <Container>
         <div className="page_head_wrapper">
           <h2 className="page_main_title__">{t('contactUsSectionTitle')}</h2>
